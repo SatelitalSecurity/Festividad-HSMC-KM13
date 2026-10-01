@@ -28,6 +28,17 @@
     .modal{position:fixed;inset:0;z-index:100;background:rgba(10,0,14,.94);display:none;align-items:center;justify-content:center;padding:20px}.modal.open{display:flex}.modal img{max-width:96vw;max-height:92vh;object-fit:contain}.close{position:absolute;top:16px;right:16px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:#fff;font-size:25px;cursor:pointer}
     @media(max-width:760px){.brand strong{font-size:12px}.home{font-size:0}.home:after{content:"←";font-size:17px}.live{font-size:0}.live:after{content:"●";font-size:14px}.hero-in{grid-template-columns:1fr}.hero-copy{text-align:center}.hero-img{min-height:260px}.maphead{align-items:flex-start;flex-direction:column}.poster-wrap{padding:8px}.info{grid-template-columns:1fr}.livecard{flex-direction:column;text-align:center}.pager{grid-template-columns:1fr}.pager a,.pager a:last-child{text-align:center}}
   </style>
+
+<style>
+  .mobile-dock{display:none}
+  @media(max-width:760px){
+    body{padding-bottom:72px}
+    .mobile-dock{position:fixed;left:10px;right:10px;bottom:10px;z-index:90;display:grid;grid-template-columns:repeat(4,1fr);gap:4px;padding:6px;background:rgba(28,2,39,.94);backdrop-filter:blur(12px);border:1px solid rgba(240,207,114,.28);border-radius:18px;box-shadow:0 12px 34px rgba(0,0,0,.28)}
+    .mobile-dock a,.mobile-dock button{border:0;background:transparent;color:#f4eaf6;border-radius:12px;padding:8px 4px;font:inherit;font-size:10px;font-weight:800;text-align:center;cursor:pointer}
+    .mobile-dock a b,.mobile-dock button b{display:block;font-size:19px;line-height:1.15;margin-bottom:2px}
+    .mobile-dock .dock-live{background:linear-gradient(145deg,#f0cf72,#d4a53b);color:#260233}
+  }
+  </style>
 </head>
 <body>
 <header class="top">
@@ -121,6 +132,21 @@ if(index<routeList.length-1){next.href="route.html?date="+routeList[index+1].key
 function openPoster(){document.getElementById("posterModal").classList.add("open");document.body.style.overflow="hidden"}
 function closePoster(e){if(e.target.id==="posterModal"||e.target.classList.contains("close")){document.getElementById("posterModal").classList.remove("open");document.body.style.overflow=""}}
 document.addEventListener("keydown",e=>{if(e.key==="Escape"){document.getElementById("posterModal").classList.remove("open");document.body.style.overflow=""}})
+</script>
+
+<nav class="mobile-dock" aria-label="Accesos rápidos">
+    <a href="index.html"><b>⌂</b>Inicio</a>
+    <a href="index.html#recorridos"><b>▦</b>Recorridos</a>
+    <a class="dock-live" href="map.html"><b>●</b>En vivo</a>
+    <button type="button" onclick="shareHSMC()"><b>↗</b>Compartir</button>
+  </nav>
+<script>
+function shareHSMC(){
+  const shareData={title:"Señor de los Milagros de Comas",text:"Programación, recorridos y seguimiento HSMC 2026",url:"https://satelitalsecurity.github.io/hsmc-comas/"};
+  if(navigator.share){navigator.share(shareData).catch(()=>{});}
+  else if(navigator.clipboard){navigator.clipboard.writeText(shareData.url).then(()=>alert("Enlace copiado"));}
+  else{prompt("Copia este enlace:",shareData.url);}
+}
 </script>
 </body>
 </html>
