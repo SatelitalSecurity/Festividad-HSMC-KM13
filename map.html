@@ -114,13 +114,16 @@ const schedule=[
  {at:"2026-11-07T07:00:00-05:00",key:"2026-11-07",day:"07",month:"NOV",title:"Procesión 2026 · Tercer y último día",meta:"Sábado 7 de noviembre · 7:00 a. m."}
 ];
 function setEvent(){
- const now=new Date();
- const e=schedule.find(x=>new Date(x.at)>=now)||schedule[schedule.length-1];
+ const today=new Intl.DateTimeFormat("en-CA",{timeZone:"America/Lima",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
+ const e=schedule.find(x=>x.key>=today)||schedule[schedule.length-1];
+ const isToday=e.key===today;
  document.getElementById("eventDay").textContent=e.day;
  document.getElementById("eventMonth").textContent=e.month;
  document.getElementById("eventTitle").textContent=e.title;
  document.getElementById("eventMeta").textContent=e.meta;
  document.getElementById("eventRoute").href="route.html?date="+e.key;
+ document.getElementById("eventLabel").textContent=isToday?"PROCESIÓN DE HOY":"PRÓXIMA PROCESIÓN";
+ document.getElementById("eventRoute").textContent=isToday?"Ver recorrido de hoy →":"Ver recorrido oficial →";
 }
 function setTime(){document.getElementById("updated").textContent="Actualizado "+new Date().toLocaleTimeString("es-PE",{hour:"2-digit",minute:"2-digit"});}
 function refreshMap(){const f=document.getElementById("liveMap"),s=f.src;f.src="about:blank";setTimeout(()=>{f.src=s;setTime();},120)}
