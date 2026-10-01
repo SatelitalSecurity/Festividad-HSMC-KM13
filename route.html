@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#2a043b">
+  <title>Recorrido oficial | HSMC Comas</title>
+  <meta name="description" content="Recorrido procesional oficial de la Hermandad del Señor de los Milagros de Comas KM 13.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="route-page-v2">
+  <header class="route-header">
+    <a href="index.html" class="back-home">← Inicio</a>
+    <div class="route-brand">
+      <span>HERMANDAD DEL</span>
+      <strong>SEÑOR DE LOS MILAGROS DE COMAS</strong>
+      <small>KM 13 · “PATRÓN DE LIMA NORTE”</small>
+    </div>
+    <a href="map.html" class="route-live">● En vivo</a>
+  </header>
+
+  <main class="route-main">
+    <section class="route-hero-v2">
+      <div>
+        <span class="eyebrow">RECORRIDO OFICIAL 2026</span>
+        <h1 id="routeTitle">Procesión</h1>
+        <p id="routeMeta">Fecha y hora</p>
+      </div>
+      <div class="route-mini-lienzo">
+        <img src="assets/lienzo-oficial-hsmc.png" alt="Lienzo oficial HSMC">
+      </div>
+    </section>
+
+    <section class="route-map-card">
+      <div class="route-map-head">
+        <div>
+          <span>MAPA OFICIAL</span>
+          <strong id="routeLabel">HSMC COMAS</strong>
+        </div>
+        <a href="map.html">📍 Seguir procesión en vivo</a>
+      </div>
+      <img id="routeImage" src="" alt="Mapa del recorrido procesional">
+    </section>
+
+    <section class="route-info-grid">
+      <article>
+        <span>📅</span>
+        <div><b>Fecha</b><p id="routeDate">—</p></div>
+      </article>
+      <article>
+        <span>🕐</span>
+        <div><b>Hora de salida</b><p id="routeTime">—</p></div>
+      </article>
+      <article>
+        <span>⛪</span>
+        <div><b>Hermandad</b><p>Señor de los Milagros de Comas · KM 13</p></div>
+      </article>
+    </section>
+
+    <div class="route-nav-bottom">
+      <a href="index.html">← Volver a todos los recorridos</a>
+      <a href="map.html">Procesión en vivo →</a>
+    </div>
+  </main>
+
+  <footer class="footer-v2">
+    <strong>Hermandad del Señor de los Milagros de Comas · KM 13</strong>
+    <span>Fe · Devoción · Encuentro</span>
+  </footer>
+
+<script>
+const routes={
+ "2026-10-08":{title:"Procesión Infantil",date:"Jueves 8 de octubre de 2026",time:"2:00 p. m.",img:"assets/recorrido-08-octubre.png"},
+ "2026-10-11":{title:"Procesión Invitación",date:"Domingo 11 de octubre de 2026",time:"12:00 m.",img:"assets/recorrido-11-octubre.png"},
+ "2026-10-17":{title:"Procesión Extraordinaria · Primer día",date:"Sábado 17 de octubre de 2026",time:"7:00 a. m.",img:"assets/recorrido-17-octubre.png"},
+ "2026-10-18":{title:"Procesión Extraordinaria · Segundo día",date:"Domingo 18 de octubre de 2026",time:"9:00 a. m.",img:"assets/recorrido-18-octubre.png"},
+ "2026-10-31":{title:"Procesión 2026 · Primer día",date:"Sábado 31 de octubre de 2026",time:"7:00 a. m.",img:"assets/recorrido-31-octubre.png"},
+ "2026-11-01":{title:"Procesión 2026 · Segundo día",date:"Domingo 1 de noviembre de 2026",time:"7:00 a. m.",img:"assets/recorrido-01-noviembre.png"},
+ "2026-11-07":{title:"Procesión 2026 · Tercer y último día",date:"Sábado 7 de noviembre de 2026",time:"7:00 a. m.",img:"assets/recorrido-07-noviembre.png"}
+};
+const key=new URLSearchParams(location.search).get("date")||"2026-10-08";
+const r=routes[key]||routes["2026-10-08"];
+document.getElementById("routeTitle").textContent=r.title;
+document.getElementById("routeMeta").textContent=r.date+" · "+r.time;
+document.getElementById("routeDate").textContent=r.date;
+document.getElementById("routeTime").textContent=r.time;
+document.getElementById("routeImage").src=r.img;
+document.getElementById("routeImage").alt="Recorrido oficial: "+r.title;
+document.title=r.title+" | HSMC Comas";
+</script>
+</body>
+</html>
