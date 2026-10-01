@@ -1,1 +1,109 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Procesión en vivo | HSMC</title><link rel="stylesheet" href="styles.css"></head><body><main><section class="route-section"><a class="chip" href="index.html">← Inicio</a><h2>Procesión en vivo</h2><p>Sigue la ubicación compartida de las Sagradas Andas del Señor de los Milagros de Comas.</p></section><section class="section" style="max-width:1100px;margin:auto;padding:0 20px 60px"><div class="live-card"><div class="live-top"><div class="anda-badge">✝</div><div><strong>Sagradas Andas</strong><span>Señor de los Milagros de Comas</span></div><div class="live-label">EN VIVO</div></div><div class="map-wrap"><iframe title="Ubicación de las Sagradas Andas" src="https://www.protrack365.com/page/share.jsp?mapType=google&token=S1794243600Df158504383d52ba5063969a4caf6c34d7b76a0108" loading="lazy" referrerpolicy="no-referrer"></iframe></div><div class="live-actions"><a class="btn-primary" target="_blank" rel="noopener" href="https://www.protrack365.com/page/share.jsp?mapType=google&token=S1794243600Df158504383d52ba5063969a4caf6c34d7b76a0108">Abrir seguimiento completo</a></div></div></section></main></body></html>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#2b063e">
+  <title>Procesión en vivo | HSMC Comas</title>
+  <meta name="description" content="Seguimiento en vivo de las Sagradas Andas del Señor de los Milagros de Comas KM 13.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="live-page">
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-mark">✝</div>
+    <div class="header-title">
+      <span>HERMANDAD DEL</span>
+      <strong>SEÑOR DE LOS MILAGROS</strong>
+      <small>KM 13 · COMAS · “PATRÓN DE LIMA NORTE”</small>
+    </div>
+    <div class="header-motto">Fe · Devoción · Encuentro</div>
+  </div>
+  <nav class="main-nav">
+    <a href="index.html">Inicio</a>
+    <a href="index.html#programacion">Programación 2026</a>
+    <a href="index.html#recorridos">Recorridos</a>
+    <a class="nav-active" href="map.html">Procesión en vivo</a>
+    <a href="index.html#hermandad">La Hermandad</a>
+  </nav>
+</header>
+
+<main>
+  <section class="live-hero">
+    <div class="live-hero-copy">
+      <span class="eyebrow">SEGUIMIENTO OFICIAL</span>
+      <h1>Procesión en vivo</h1>
+      <p>Sigue la ubicación compartida de las Sagradas Andas del Señor de los Milagros de Comas durante el recorrido procesional.</p>
+      <div class="live-meta">
+        <span class="live-dot"></span>
+        <strong>GPS HSMC</strong>
+        <span>·</span>
+        <span id="lastUpdate">Mapa listo</span>
+      </div>
+    </div>
+    <div class="live-lienzo">
+      <img src="assets/lienzo-oficial-hsmc.png" alt="Lienzo oficial del Señor de los Milagros de Comas">
+    </div>
+  </section>
+
+  <section class="live-content">
+    <div class="live-card pro">
+      <div class="live-top">
+        <div class="anda-badge">✝</div>
+        <div>
+          <strong>Sagradas Andas</strong>
+          <span>Hermandad del Señor de los Milagros de Comas · KM 13</span>
+        </div>
+        <div class="live-label">EN VIVO</div>
+      </div>
+
+      <div class="map-wrap pro-map">
+        <iframe
+          id="liveMap"
+          title="Ubicación en vivo de las Sagradas Andas"
+          src="https://www.protrack365.com/page/share.jsp?mapType=google&token=S1794243600Df158504383d52ba5063969a4caf6c34d7b76a0108"
+          loading="eager"
+          referrerpolicy="no-referrer">
+        </iframe>
+      </div>
+
+      <div class="live-actions">
+        <button class="btn-refresh" type="button" onclick="refreshMap()">↻ Actualizar ubicación</button>
+        <a class="btn-primary" target="_blank" rel="noopener" href="https://www.protrack365.com/page/share.jsp?mapType=google&token=S1794243600Df158504383d52ba5063969a4caf6c34d7b76a0108">Abrir mapa completo</a>
+      </div>
+      <div class="live-help">
+        <div>📍 <strong>Ubicación en tiempo real</strong><span>La posición depende de la señal y transmisión del GPS instalado en las Sagradas Andas.</span></div>
+        <div>📱 <strong>Diseñado para celular</strong><span>Puedes ampliar el mapa y seguir el recorrido desde tu teléfono.</span></div>
+      </div>
+    </div>
+
+    <div class="live-back">
+      <a href="index.html#recorridos">← Ver programación y recorridos 2026</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <strong>HERMANDAD DEL SEÑOR DE LOS MILAGROS DE COMAS · KM 13</strong>
+  <span>Fe · Devoción · Encuentro</span>
+</footer>
+
+<script>
+function setUpdate(){
+  const d=new Date();
+  const t=d.toLocaleTimeString('es-PE',{hour:'2-digit',minute:'2-digit'});
+  document.getElementById('lastUpdate').textContent='Actualizado '+t;
+}
+function refreshMap(){
+  const f=document.getElementById('liveMap');
+  const s=f.src;
+  f.src='about:blank';
+  setTimeout(()=>{f.src=s;setUpdate();},120);
+}
+setUpdate();
+</script>
+</body>
+</html>
