@@ -20,7 +20,7 @@
     .panel{position:absolute;z-index:500;left:14px;right:14px;top:14px;max-width:520px;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border:1px solid #e7d9e9;border-radius:16px;padding:13px 14px;box-shadow:0 12px 28px rgba(46,6,63,.15)}
     .panel small{display:block;color:var(--g);font-weight:900;letter-spacing:.12em}.panel h1{font-family:Georgia,serif;color:var(--p);font-size:20px;margin:4px 0}.panel p{margin:0;color:var(--muted);font-size:12px;line-height:1.5}
     .gpsrow{display:flex;gap:8px;align-items:center;margin-top:9px;font-size:11px}.dot{width:9px;height:9px;border-radius:50%;background:#a7a0aa}.dot.ok{background:var(--ok);box-shadow:0 0 0 5px rgba(46,175,93,.13)}
-    .anda-marker{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,#f0cf72,#d4a53b);border:4px solid #fff;box-shadow:0 5px 18px rgba(34,2,47,.38);color:#22022f;font-size:30px;font-weight:900}
+    .anda-marker{position:relative;width:54px;height:62px;border-radius:8px 8px 12px 12px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(145deg,#4b0b63,#260233);border:3px solid #d4a53b;box-shadow:0 5px 18px rgba(34,2,47,.45);color:#f0cf72;overflow:visible}.anda-marker:after{content:"";position:absolute;bottom:-7px;left:7px;right:7px;height:7px;background:#d4a53b;border-radius:0 0 7px 7px}.anda-cross{position:absolute;top:-17px;left:50%;transform:translateX(-50%);font-size:21px;font-weight:900;color:#d4a53b}.anda-marker img{width:34px;height:34px;object-fit:cover;border:2px solid #f0cf72;border-radius:4px}.anda-marker span{font-size:7px;font-weight:900;letter-spacing:.08em;color:#f0cf72;margin-top:2px}
     .anda-pulse{position:absolute;width:72px;height:72px;border-radius:50%;background:rgba(88,18,119,.18);animation:pulse 1.8s infinite}
     @keyframes pulse{0%{transform:scale(.75);opacity:.9}100%{transform:scale(1.35);opacity:0}}
     footer{background:#190122;color:#fff;border-top:2px solid var(--g);padding:10px 14px;text-align:center;font-size:10px;letter-spacing:.08em}
@@ -44,11 +44,12 @@
   </section>
 </main>
 
-<footer>HSMC · KM 13 · “Patrón de Lima Norte” · mapa propio en preparación</footer>
+<footer>HSMC · KM 13 · “Patrón de Lima Norte” · seguimiento GPS en vivo</footer>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-const map=L.map("map",{zoomControl:true}).setView([-11.94,-77.06],13);
+const map=L.map("map",{zoomControl:false}).setView([-11.94,-77.06],13);
+L.control.zoom({position:"bottomright"}).addTo(map);
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{
   maxZoom:19,
   attribution:"&copy; OpenStreetMap"
@@ -56,7 +57,7 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{
 
 const icon=L.divIcon({
   className:"",
-  html:'<div style="position:relative;width:72px;height:72px;display:grid;place-items:center"><div class="anda-pulse"></div><div class="anda-marker">✝</div></div>',
+  html:'<div style="position:relative;width:72px;height:72px;display:grid;place-items:center"><div class="anda-pulse"></div><div class="anda-marker"><div class="anda-cross">✝</div><img src="assets/lienzo-oficial-hsmc.png" alt=""><span>HSMC</span></div></div>',
   iconSize:[72,72],
   iconAnchor:[36,36]
 });
@@ -88,7 +89,8 @@ function setLive(d){
   document.getElementById("gpsStatus").textContent="Ubicación disponible";
   document.getElementById("message").textContent="Posición GPS mostrada con el marcador propio de las Sagradas Andas.";
   document.getElementById("dot").classList.add("ok");
-  document.getElementById("gpsTime").textContent=d.gpstime?("· "+d.gpstime):"";
+  const gpsDate=d.gpstime?new Date(Number(d.gpstime)):null;
+document.getElementById("gpsTime").textContent=gpsDate&&!isNaN(gpsDate)?"· Última actualización: "+gpsDate.toLocaleTimeString("es-PE",{timeZone:"America/Lima",hour:"2-digit",minute:"2-digit"}):"";
 }
 
 async function loadLocation(){
