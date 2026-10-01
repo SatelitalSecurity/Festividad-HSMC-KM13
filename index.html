@@ -3,132 +3,160 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#2a043b">
+  <meta name="theme-color" content="#260233">
   <title>Señor de los Milagros de Comas | HSMC</title>
   <meta name="description" content="Programación, recorridos oficiales y seguimiento en vivo de las Sagradas Andas del Señor de los Milagros de Comas KM 13.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-:root{--purple:#2b063e;--purple2:#4d0f69;--purple3:#6a1a88;--gold:#d4a53b;--gold2:#f0cf72;--cream:#fffaf4;--ink:#211629;--muted:#746679}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,sans-serif;background:#f6f0f7;color:var(--ink)}a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
-.landing-hero{position:relative;overflow:hidden;background:radial-gradient(circle at 25% 20%,rgba(240,207,114,.16),transparent 28%),linear-gradient(135deg,#21032f 0,#3c0752 52%,#1a0225 100%);color:#fff;border-bottom:3px solid var(--gold)}
-.landing-glow{position:absolute;inset:auto -10% -45% 42%;height:520px;background:radial-gradient(circle,rgba(212,165,59,.18),transparent 68%)}
-.landing-inner{max-width:1180px;margin:auto;display:grid;grid-template-columns:1.05fr .95fr;min-height:620px}
-.landing-copy{padding:74px 30px 68px 20px;align-self:center;position:relative;z-index:2}.location-line{font-size:11px;letter-spacing:.22em;color:#e5d8e8;margin-bottom:18px}
-.mini-seal{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,var(--gold2),var(--gold));color:var(--purple);font-size:31px;font-weight:900;box-shadow:0 0 0 6px rgba(255,255,255,.06)}
-.institution{font-family:Cinzel,Georgia,serif;text-transform:uppercase;letter-spacing:.08em;font-size:14px;color:var(--gold2);margin:18px 0 8px}.landing-copy h1{font-family:Cinzel,Georgia,serif;font-size:clamp(48px,6vw,82px);line-height:1.02;margin:0 0 18px}.landing-sub{font-size:18px;line-height:1.65;color:#eee2f1;max-width:650px}
-.live-pill{display:inline-flex;align-items:center;gap:10px;margin-top:22px;padding:13px 18px;border-radius:999px;background:#fff;color:var(--purple);font-weight:900;box-shadow:0 12px 24px rgba(0,0,0,.16)}.pulse{width:10px;height:10px;border-radius:50%;background:#38cf68;box-shadow:0 0 0 6px rgba(56,207,104,.14)}
-.landing-lienzo{position:relative;min-height:620px;background:#13011c}.landing-lienzo img{width:100%;height:100%;object-fit:cover}.lienzo-caption{position:absolute;left:20px;right:20px;bottom:20px;background:rgba(27,2,39,.78);backdrop-filter:blur(7px);border:1px solid rgba(240,207,114,.45);border-radius:16px;padding:13px 16px}.lienzo-caption span,.lienzo-caption strong{display:block}.lienzo-caption span{font-size:11px;color:var(--gold2);letter-spacing:.14em}.lienzo-caption strong{font-family:Cinzel,Georgia,serif;margin-top:3px}
-.date-strip-wrap{background:#fff;border-bottom:1px solid #eadcec;box-shadow:0 8px 22px rgba(52,8,72,.05)}.date-strip{max-width:1180px;margin:auto;display:flex;gap:9px;overflow-x:auto;padding:16px 20px}.date-chip{min-width:116px;background:#faf6fb;border:1px solid #e5d7e9;border-radius:14px;padding:10px 12px;display:grid;gap:4px}.date-chip span{font-size:10px;color:#7c6d80;font-weight:800;letter-spacing:.06em}.date-chip strong{color:var(--purple);font-size:13px}.date-chip.featured{background:linear-gradient(135deg,var(--purple),var(--purple3));border-color:var(--purple);color:#fff}.date-chip.featured span,.date-chip.featured strong{color:#fff}
-.next-procession{max-width:1100px;margin:38px auto 0;padding:0 20px}.next-card{display:grid;grid-template-columns:auto auto 1fr auto;align-items:center;gap:18px;padding:22px;border-radius:20px;background:#fff;border:1px solid #e9dbe9;box-shadow:0 15px 32px rgba(48,8,66,.08)}.next-label{writing-mode:vertical-rl;transform:rotate(180deg);font-size:10px;letter-spacing:.16em;color:var(--gold);font-weight:900}.next-date{width:86px;height:86px;border-radius:18px;display:grid;place-items:center;align-content:center;background:linear-gradient(145deg,#3f0b58,#250336);color:#fff;border:2px solid var(--gold)}.next-date span{font-family:Cinzel,Georgia,serif;font-size:38px;line-height:1}.next-date small{font-size:9px;letter-spacing:.13em}.next-copy h2{font-family:Cinzel,Georgia,serif;color:var(--purple);margin:0 0 6px}.next-copy p{margin:0;color:var(--muted);line-height:1.55}.next-button{padding:12px 15px;border-radius:12px;background:var(--purple);color:#fff;font-weight:800}
-.official-section{padding:62px 20px 74px}.section-intro{max-width:850px;margin:0 auto 30px;text-align:center}.section-intro span{font-size:11px;color:var(--gold);font-weight:900;letter-spacing:.18em}.section-intro h2{font-family:Cinzel,Georgia,serif;color:var(--purple);font-size:clamp(34px,5vw,54px);margin:7px 0}.section-intro p{color:var(--muted);line-height:1.65}
-.route-preview-grid{max-width:1180px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.route-preview{background:#fff;border:1px solid #e8d9e9;border-radius:18px;overflow:hidden;box-shadow:0 12px 28px rgba(48,8,66,.07)}.route-preview img{width:100%;aspect-ratio:4/5;object-fit:cover}.route-preview div{padding:13px}.route-preview span,.route-preview strong{display:block}.route-preview span{font-size:10px;color:var(--gold);font-weight:900;letter-spacing:.08em}.route-preview strong{font-family:Cinzel,Georgia,serif;color:var(--purple);font-size:14px;margin-top:5px}
-.faith-band{max-width:1100px;margin:0 auto 70px;padding:34px;border-radius:24px;background:linear-gradient(135deg,#2d063f,#5b1477);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:22px}.faith-band span{font-size:11px;color:var(--gold2);letter-spacing:.18em;font-weight:900}.faith-band h2{font-family:Cinzel,Georgia,serif;font-size:30px;margin:6px 0}.faith-band p{margin:0;color:#eadfee}.faith-band a{white-space:nowrap;padding:13px 16px;border-radius:999px;background:var(--gold2);color:var(--purple);font-weight:900}.footer-v2{text-align:center;background:#1d0229;color:#fff;padding:28px 20px;border-top:3px solid var(--gold);display:grid;gap:7px}.footer-v2 strong{font-family:Cinzel,Georgia,serif}.footer-v2 span{font-size:12px;color:var(--gold2);letter-spacing:.13em}
-@media(max-width:920px){.landing-inner{grid-template-columns:1fr}.landing-copy{text-align:center;padding:58px 22px 48px}.mini-seal{margin:auto}.landing-lienzo{min-height:500px}.next-card{grid-template-columns:auto auto 1fr}.next-button{grid-column:2/-1;text-align:center}.route-preview-grid{grid-template-columns:repeat(2,1fr)}.faith-band{margin-left:16px;margin-right:16px}}
-@media(max-width:620px){.landing-copy h1{font-size:42px}.landing-sub{font-size:15px}.landing-lienzo{min-height:430px}.next-card{grid-template-columns:auto 1fr}.next-label{display:none}.next-copy{grid-column:1/-1}.next-button{grid-column:1/-1}.route-preview-grid{grid-template-columns:1fr}.faith-band{flex-direction:column;text-align:center}}
-</style>
+  :root{--p:#260233;--p2:#4a0b63;--p3:#64147e;--g:#d4a53b;--g2:#f0cf72;--cream:#fffaf4;--ink:#211629;--muted:#746679}
+  *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,sans-serif;background:#f7f2f8;color:var(--ink)}a{text-decoration:none;color:inherit}img{display:block;max-width:100%}
+
+  .topbar{position:sticky;top:0;z-index:30;background:rgba(29,2,41,.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(240,207,114,.25);color:#fff}
+  .topbar-in{max-width:1180px;margin:auto;padding:11px 18px;display:flex;align-items:center;gap:18px}
+  .brand-dot{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,var(--g2),var(--g));color:var(--p);font-weight:900;font-size:24px;flex:0 0 42px}
+  .brand-txt{min-width:0}.brand-txt span{display:block;font-size:9px;letter-spacing:.16em;color:var(--g2)}.brand-txt strong{font-family:Cinzel,serif;font-size:15px;white-space:nowrap}
+  .nav{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap}.nav a{font-size:12px;font-weight:800;padding:9px 11px;border-radius:999px;color:#eee1f1}.nav a.live{background:var(--g2);color:var(--p)}
+
+  .hero{position:relative;overflow:hidden;background:
+    radial-gradient(circle at 20% 18%,rgba(240,207,114,.16),transparent 30%),
+    linear-gradient(135deg,#1c0227 0,#3a074e 56%,#16011f 100%);color:#fff}
+  .hero:after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,transparent,var(--g),transparent)}
+  .hero-in{max-width:1180px;margin:auto;display:grid;grid-template-columns:1.08fr .92fr;min-height:610px;align-items:stretch}
+  .hero-copy{padding:76px 42px 72px 20px;align-self:center;position:relative;z-index:2}
+  .pretitle{font-size:11px;letter-spacing:.23em;color:var(--g2);font-weight:900;margin-bottom:13px}
+  .hero h1{font-family:Cinzel,serif;font-size:clamp(46px,6.3vw,80px);line-height:1.02;margin:0 0 12px;max-width:760px}
+  .subtitle{font-family:Cinzel,serif;font-size:20px;color:var(--g2);margin:0 0 18px}
+  .hero-desc{font-size:18px;line-height:1.65;color:#ecdfef;max-width:650px;margin:0}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+  .btn-main,.btn-sec,.btn-ghost{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 18px;border-radius:999px;font-weight:900;font-size:13px}
+  .btn-main{background:linear-gradient(135deg,var(--g2),var(--g));color:var(--p);box-shadow:0 14px 30px rgba(0,0,0,.2)}
+  .btn-sec{background:#fff;color:var(--p)}
+  .btn-ghost{border:1px solid rgba(255,255,255,.2);color:#fff;background:rgba(255,255,255,.05)}
+  .live-dot{width:10px;height:10px;border-radius:50%;background:#39d16d;box-shadow:0 0 0 6px rgba(57,209,109,.14)}
+  .hero-note{margin-top:24px;display:flex;gap:10px;align-items:center;color:#d8cadd;font-size:12px}
+  .hero-note b{color:#fff}
+
+  .hero-art{position:relative;min-height:610px;background:#14011d;overflow:hidden}
+  .hero-art img{width:100%;height:100%;object-fit:cover;object-position:center}
+  .hero-art:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(28,2,39,.45),transparent 35%,rgba(10,0,15,.1))}
+  .art-badge{position:absolute;z-index:2;right:18px;bottom:18px;left:18px;background:rgba(28,2,39,.8);backdrop-filter:blur(7px);border:1px solid rgba(240,207,114,.45);border-radius:16px;padding:13px 15px}
+  .art-badge span{display:block;font-size:10px;letter-spacing:.15em;color:var(--g2)}.art-badge strong{display:block;font-family:Cinzel,serif;font-size:18px;margin-top:3px}
+
+  .date-wrap{background:#fff;border-bottom:1px solid #eaddec;box-shadow:0 8px 24px rgba(48,8,66,.05)}
+  .date-strip{max-width:1180px;margin:auto;display:flex;gap:9px;overflow-x:auto;padding:15px 18px}
+  .date-chip{min-width:126px;background:#faf6fb;border:1px solid #e6d8e9;border-radius:14px;padding:10px 12px;display:grid;gap:3px}
+  .date-chip span{font-size:10px;color:#786a7c;font-weight:800;letter-spacing:.06em}.date-chip strong{color:var(--p);font-size:13px}
+  .date-chip.live{background:linear-gradient(135deg,var(--p),var(--p3));border-color:var(--p)}.date-chip.live span,.date-chip.live strong{color:#fff}
+
+  .next{max-width:1100px;margin:38px auto 0;padding:0 18px}
+  .next-card{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;background:#fff;border:1px solid #eaddec;border-radius:20px;padding:22px;box-shadow:0 15px 34px rgba(48,8,66,.08)}
+  .next-date{width:94px;height:94px;border-radius:18px;background:linear-gradient(145deg,#3e0b57,#240332);color:#fff;border:2px solid var(--g);display:grid;place-items:center;align-content:center}.next-date b{font-family:Cinzel,serif;font-size:40px;line-height:1}.next-date span{font-size:9px;letter-spacing:.12em}.next-copy small{font-size:10px;color:var(--g);font-weight:900;letter-spacing:.14em}.next-copy h2{font-family:Cinzel,serif;color:var(--p);margin:6px 0}.next-copy p{margin:0;color:var(--muted);line-height:1.6}.next-card a{padding:12px 15px;border-radius:12px;background:var(--p);color:#fff;font-weight:800}
+
+  .section{padding:62px 18px 74px}.intro{max-width:850px;margin:0 auto 28px;text-align:center}.intro span{font-size:10px;color:var(--g);font-weight:900;letter-spacing:.2em}.intro h2{font-family:Cinzel,serif;color:var(--p);font-size:clamp(34px,4.8vw,54px);margin:7px 0}.intro p{color:var(--muted);line-height:1.65}
+  .routes{max-width:1180px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.route{background:#fff;border:1px solid #e8d9ea;border-radius:18px;overflow:hidden;box-shadow:0 12px 28px rgba(48,8,66,.07);transition:.2s}.route:hover{transform:translateY(-3px);box-shadow:0 18px 36px rgba(48,8,66,.12)}.route img{width:100%;aspect-ratio:4/5;object-fit:cover}.route div{padding:13px}.route span,.route strong{display:block}.route span{font-size:10px;color:var(--g);font-weight:900;letter-spacing:.08em}.route strong{font-family:Cinzel,serif;color:var(--p);font-size:14px;margin-top:5px}
+
+  .faith{max-width:1100px;margin:0 auto 70px;padding:32px;border-radius:24px;background:linear-gradient(135deg,#2c053e,#5b1477);color:#fff;display:flex;justify-content:space-between;align-items:center;gap:22px}.faith span{font-size:10px;color:var(--g2);font-weight:900;letter-spacing:.16em}.faith h2{font-family:Cinzel,serif;margin:6px 0;font-size:30px}.faith p{margin:0;color:#eadfee}.faith a{padding:13px 16px;border-radius:999px;background:var(--g2);color:var(--p);font-weight:900;white-space:nowrap}
+  footer{text-align:center;background:#1b0226;color:#fff;padding:27px 18px;border-top:3px solid var(--g);display:grid;gap:7px}footer strong{font-family:Cinzel,serif}footer span{font-size:12px;color:var(--g2);letter-spacing:.13em}
+
+  @media(max-width:900px){
+    .nav{display:none}.hero-in{grid-template-columns:1fr}.hero-copy{text-align:center;padding:58px 22px 46px}.hero-actions,.hero-note{justify-content:center}.hero-art{min-height:520px}.routes{grid-template-columns:repeat(2,1fr)}.faith{margin-left:15px;margin-right:15px}
+  }
+  @media(max-width:620px){
+    .brand-txt strong{font-size:12px}.hero h1{font-size:40px}.subtitle{font-size:17px}.hero-desc{font-size:15px}.hero-art{min-height:430px}.hero-actions{flex-direction:column}.hero-actions a{width:100%}.next-card{grid-template-columns:auto 1fr}.next-card>a{grid-column:1/-1;text-align:center}.routes{grid-template-columns:1fr}.faith{flex-direction:column;text-align:center}
+  }
+  </style>
 </head>
-<body class="home-v2">
+<body>
+  <header class="topbar">
+    <div class="topbar-in">
+      <div class="brand-dot">✝</div>
+      <div class="brand-txt">
+        <span>HERMANDAD DEL</span>
+        <strong>SEÑOR DE LOS MILAGROS DE COMAS · KM 13</strong>
+      </div>
+      <nav class="nav">
+        <a href="#recorridos">Recorridos</a>
+        <a href="#proxima">Próxima procesión</a>
+        <a class="live" href="map.html">Procesión en vivo</a>
+      </nav>
+    </div>
+  </header>
+
   <main>
-    <section class="landing-hero" id="inicio">
-      <div class="landing-glow"></div>
-      <div class="landing-inner">
-        <div class="landing-copy">
-          <div class="location-line">COMAS · LIMA · PERÚ</div>
-          <div class="mini-seal">✝</div>
-          <p class="institution">Hermandad del Señor de los Milagros de Comas · KM 13</p>
-          <h1>Señor de los Milagros</h1>
-          <p class="landing-sub">Sigue el recorrido de fe y acompaña cada momento de la procesión.</p>
-          <a class="live-pill" href="map.html"><span class="pulse"></span> Procesión en vivo <b>→</b></a>
-        </div>
-        <div class="landing-lienzo">
-          <img src="assets/lienzo-oficial-hsmc.png" alt="Lienzo oficial del Señor de los Milagros de Comas">
-          <div class="lienzo-caption">
-            <span>Lienzo oficial</span>
-            <strong>“Patrón de Lima Norte”</strong>
+    <section class="hero">
+      <div class="hero-in">
+        <div class="hero-copy">
+          <div class="pretitle">HSMC · KM 13 · COMAS · LIMA</div>
+          <h1>Hermandad del Señor de los Milagros de Comas</h1>
+          <p class="subtitle">“Patrón de Lima Norte”</p>
+          <p class="hero-desc">Sigue el recorrido oficial de las Sagradas Andas, consulta la programación y acompaña la Festividad 2026 desde cualquier lugar.</p>
+          <div class="hero-actions">
+            <a class="btn-main" href="map.html"><span class="live-dot"></span> Ubicación en vivo</a>
+            <a class="btn-sec" href="#recorridos">Recorridos procesionales</a>
+            <a class="btn-ghost" href="#proxima">Programación oficial</a>
           </div>
+          <div class="hero-note">✦ <span><b>Fe · Devoción · Encuentro</b> al servicio de la comunidad de Comas.</span></div>
+        </div>
+        <div class="hero-art">
+          <img src="assets/lienzo-oficial-hsmc.png" alt="Lienzo oficial del Señor de los Milagros de Comas">
+          <div class="art-badge"><span>LIENZO OFICIAL</span><strong>Señor de los Milagros de Comas</strong></div>
         </div>
       </div>
     </section>
 
-    <section class="date-strip-wrap" aria-label="Fechas de procesión 2026">
+    <section class="date-wrap" aria-label="Fechas oficiales 2026">
       <div class="date-strip">
-        <a class="date-chip featured" href="map.html"><span>EN VIVO</span><strong>GPS</strong></a>
-        <a class="date-chip" href="route.html?date=2026-10-08"><span>JUE 08/10</span><strong>2:00 PM</strong></a>
-        <a class="date-chip" href="route.html?date=2026-10-11"><span>DOM 11/10</span><strong>12:00 M</strong></a>
-        <a class="date-chip" href="route.html?date=2026-10-17"><span>SÁB 17/10</span><strong>7:00 AM</strong></a>
-        <a class="date-chip" href="route.html?date=2026-10-18"><span>DOM 18/10</span><strong>9:00 AM</strong></a>
-        <a class="date-chip" href="route.html?date=2026-10-31"><span>SÁB 31/10</span><strong>7:00 AM</strong></a>
-        <a class="date-chip" href="route.html?date=2026-11-01"><span>DOM 01/11</span><strong>7:00 AM</strong></a>
-        <a class="date-chip" href="route.html?date=2026-11-07"><span>SÁB 07/11</span><strong>7:00 AM</strong></a>
+        <a class="date-chip live" href="map.html"><span>EN VIVO</span><strong>GPS HSMC</strong></a>
+        <a class="date-chip" href="route.html?date=2026-10-08"><span>JUE 08 OCT</span><strong>2:00 PM</strong></a>
+        <a class="date-chip" href="route.html?date=2026-10-11"><span>DOM 11 OCT</span><strong>12:00 M</strong></a>
+        <a class="date-chip" href="route.html?date=2026-10-17"><span>SÁB 17 OCT</span><strong>7:00 AM</strong></a>
+        <a class="date-chip" href="route.html?date=2026-10-18"><span>DOM 18 OCT</span><strong>9:00 AM</strong></a>
+        <a class="date-chip" href="route.html?date=2026-10-31"><span>SÁB 31 OCT</span><strong>7:00 AM</strong></a>
+        <a class="date-chip" href="route.html?date=2026-11-01"><span>DOM 01 NOV</span><strong>7:00 AM</strong></a>
+        <a class="date-chip" href="route.html?date=2026-11-07"><span>SÁB 07 NOV</span><strong>7:00 AM</strong></a>
       </div>
     </section>
 
-    <section class="next-procession">
+    <section id="proxima" class="next">
       <div class="next-card">
-        <div class="next-label">PRÓXIMA PROCESIÓN</div>
-        <div class="next-date"><span>08</span><small>OCTUBRE</small></div>
+        <div class="next-date"><b>08</b><span>OCTUBRE</span></div>
         <div class="next-copy">
+          <small>PRÓXIMA PROCESIÓN</small>
           <h2>Procesión Infantil</h2>
           <p><strong>Jueves 8 de octubre · 2:00 p. m.</strong><br>Consulta el recorrido oficial y acompaña a las Sagradas Andas.</p>
         </div>
-        <a href="route.html?date=2026-10-08" class="next-button">Ver recorrido →</a>
+        <a href="route.html?date=2026-10-08">Ver recorrido →</a>
       </div>
     </section>
 
-    <section class="official-section">
-      <div class="section-intro">
+    <section id="recorridos" class="section">
+      <div class="intro">
         <span>FESTIVIDAD 2026</span>
         <h2>Recorridos procesionales</h2>
-        <p>Selecciona una fecha para consultar el mapa oficial. Durante la procesión, utiliza “En vivo” para conocer la ubicación compartida de las Sagradas Andas.</p>
+        <p>Selecciona una fecha para consultar el mapa oficial. Durante la procesión, utiliza “Ubicación en vivo” para seguir la posición compartida de las Sagradas Andas.</p>
       </div>
-
-      <div class="route-preview-grid">
-        <a class="route-preview" href="route.html?date=2026-10-08">
-          <img src="assets/recorrido-08-octubre.png" alt="Recorrido del 8 de octubre">
-          <div><span>08 OCT · 2:00 PM</span><strong>Procesión Infantil</strong></div>
-        </a>
-        <a class="route-preview" href="route.html?date=2026-10-11">
-          <img src="assets/recorrido-11-octubre.png" alt="Recorrido del 11 de octubre">
-          <div><span>11 OCT · 12:00 M</span><strong>Procesión Invitación</strong></div>
-        </a>
-        <a class="route-preview" href="route.html?date=2026-10-17">
-          <img src="assets/recorrido-17-octubre.png" alt="Recorrido del 17 de octubre">
-          <div><span>17 OCT · 7:00 AM</span><strong>Extraordinaria · Día 1</strong></div>
-        </a>
-        <a class="route-preview" href="route.html?date=2026-10-18">
-          <img src="assets/recorrido-18-octubre.png" alt="Recorrido del 18 de octubre">
-          <div><span>18 OCT · 9:00 AM</span><strong>Extraordinaria · Día 2</strong></div>
-        </a>
-        <a class="route-preview" href="route.html?date=2026-10-31">
-          <img src="assets/recorrido-31-octubre.png" alt="Recorrido del 31 de octubre">
-          <div><span>31 OCT · 7:00 AM</span><strong>Procesión · Día 1</strong></div>
-        </a>
-        <a class="route-preview" href="route.html?date=2026-11-01">
-          <img src="assets/recorrido-01-noviembre.png" alt="Recorrido del 1 de noviembre">
-          <div><span>01 NOV · 7:00 AM</span><strong>Procesión · Día 2</strong></div>
-        </a>
-        <a class="route-preview" href="route.html?date=2026-11-07">
-          <img src="assets/recorrido-07-noviembre.png" alt="Recorrido del 7 de noviembre">
-          <div><span>07 NOV · 7:00 AM</span><strong>Procesión · Último día</strong></div>
-        </a>
+      <div class="routes">
+        <a class="route" href="route.html?date=2026-10-08"><img src="assets/recorrido-08-octubre.png" alt="Recorrido 8 de octubre"><div><span>08 OCT · 2:00 PM</span><strong>Procesión Infantil</strong></div></a>
+        <a class="route" href="route.html?date=2026-10-11"><img src="assets/recorrido-11-octubre.png" alt="Recorrido 11 de octubre"><div><span>11 OCT · 12:00 M</span><strong>Procesión Invitación</strong></div></a>
+        <a class="route" href="route.html?date=2026-10-17"><img src="assets/recorrido-17-octubre.png" alt="Recorrido 17 de octubre"><div><span>17 OCT · 7:00 AM</span><strong>Extraordinaria · Primer día</strong></div></a>
+        <a class="route" href="route.html?date=2026-10-18"><img src="assets/recorrido-18-octubre.png" alt="Recorrido 18 de octubre"><div><span>18 OCT · 9:00 AM</span><strong>Extraordinaria · Segundo día</strong></div></a>
+        <a class="route" href="route.html?date=2026-10-31"><img src="assets/recorrido-31-octubre.png" alt="Recorrido 31 de octubre"><div><span>31 OCT · 7:00 AM</span><strong>Procesión · Primer día</strong></div></a>
+        <a class="route" href="route.html?date=2026-11-01"><img src="assets/recorrido-01-noviembre.png" alt="Recorrido 1 de noviembre"><div><span>01 NOV · 7:00 AM</span><strong>Procesión · Segundo día</strong></div></a>
+        <a class="route" href="route.html?date=2026-11-07"><img src="assets/recorrido-07-noviembre.png" alt="Recorrido 7 de noviembre"><div><span>07 NOV · 7:00 AM</span><strong>Procesión · Tercer y último día</strong></div></a>
       </div>
     </section>
 
-    <section class="faith-band">
-      <div>
-        <span>HSMC · KM 13</span>
-        <h2>“Tu pueblo de Comas camina contigo”</h2>
-        <p>Fe, tradición y servicio al encuentro del Señor.</p>
-      </div>
+    <section class="faith">
+      <div><span>HSMC · KM 13</span><h2>“Tu pueblo de Comas camina contigo”</h2><p>Fe, tradición y servicio al encuentro del Señor.</p></div>
       <a href="map.html">Seguir las Sagradas Andas →</a>
     </section>
   </main>
 
-  <footer class="footer-v2">
+  <footer>
     <strong>Hermandad del Señor de los Milagros de Comas · KM 13</strong>
-    <span>“Patrón de Lima Norte”</span>
+    <span>“Patrón de Lima Norte” · Fe · Devoción · Encuentro</span>
   </footer>
 </body>
 </html>
