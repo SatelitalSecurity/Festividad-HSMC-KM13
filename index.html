@@ -75,7 +75,7 @@
     .mobile-dock{position:fixed;left:10px;right:10px;bottom:10px;z-index:90;display:grid;grid-template-columns:repeat(4,1fr);gap:4px;padding:6px;background:rgba(28,2,39,.94);backdrop-filter:blur(12px);border:1px solid rgba(240,207,114,.28);border-radius:18px;box-shadow:0 12px 34px rgba(0,0,0,.28)}
     .mobile-dock a,.mobile-dock button{border:0;background:transparent;color:#f4eaf6;border-radius:12px;padding:8px 4px;font:inherit;font-size:10px;font-weight:800;text-align:center;cursor:pointer}
     .mobile-dock a b,.mobile-dock button b{display:block;font-size:19px;line-height:1.15;margin-bottom:2px}
-    .mobile-dock .dock-live{background:linear-gradient(145deg,#f0cf72,#d4a53b);color:#260233}
+    .mobile-dock .dock-live,.mobile-dock .dock-current{background:linear-gradient(145deg,#f0cf72,#d4a53b);color:#260233}
   }
   </style>
 </head>
@@ -212,14 +212,14 @@ const processionSchedule=[
 </script>
 
 <nav class="mobile-dock" aria-label="Accesos rápidos">
-    <a href="index.html"><b>⌂</b>Inicio</a>
+    <a class="dock-current" aria-current="page" href="index.html"><b>⌂</b>Inicio</a>
     <a href="index.html#recorridos"><b>▦</b>Recorridos</a>
-    <a class="dock-live" href="map.html"><b>●</b>En vivo</a>
+    <a href="map.html"><b>●</b>En vivo</a>
     <button type="button" onclick="shareHSMC()"><b>↗</b>Compartir</button>
   </nav>
 <script>
 function shareHSMC(){
-  const shareData={title:"Señor de los Milagros de Comas",text:"Programación, recorridos y seguimiento HSMC 2026",url:"https://satelitalsecurity.github.io/hsmc-comas/"};
+  const shareData={title:document.title,text:"HSMC Comas · Festividad 2026",url:location.href};
   if(navigator.share){navigator.share(shareData).catch(()=>{});}
   else if(navigator.clipboard){navigator.clipboard.writeText(shareData.url).then(()=>alert("Enlace copiado"));}
   else{prompt("Copia este enlace:",shareData.url);}
