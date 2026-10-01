@@ -3,93 +3,124 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#2a043b">
+  <meta name="theme-color" content="#22022f">
   <title>Recorrido oficial | HSMC Comas</title>
   <meta name="description" content="Recorrido procesional oficial de la Hermandad del Señor de los Milagros de Comas KM 13.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root{--p:#22022f;--p2:#4b0b63;--p3:#651680;--g:#d4a53b;--g2:#f0cf72;--cream:#fffaf4;--ink:#211629;--muted:#75697a}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,sans-serif;background:#f6f0f7;color:var(--ink)}a{text-decoration:none;color:inherit}img{display:block;max-width:100%}
+    .top{position:sticky;top:0;z-index:40;background:rgba(27,2,38,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(240,207,114,.26);color:#fff}
+    .topin{max-width:1180px;margin:auto;padding:11px 18px;display:flex;align-items:center;gap:13px}
+    .seal{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,var(--g2),var(--g));color:var(--p);font-size:24px;font-weight:900;flex:0 0 42px}
+    .brand{min-width:0}.brand span{display:block;font-size:9px;letter-spacing:.15em;color:var(--g2)}.brand strong{font-family:Cinzel,serif;font-size:15px;white-space:nowrap}.home,.live{margin-left:auto;padding:9px 12px;border-radius:999px;font-size:12px;font-weight:800}.home{border:1px solid rgba(255,255,255,.16)}.live{margin-left:6px;background:var(--g2);color:var(--p)}
+    .hero{background:radial-gradient(circle at 18% 20%,rgba(240,207,114,.14),transparent 30%),linear-gradient(135deg,#1b0226,#3c0751 58%,#17011f);color:#fff;border-bottom:3px solid var(--g)}
+    .hero-in{max-width:1180px;margin:auto;display:grid;grid-template-columns:1fr 260px;min-height:300px}.hero-copy{padding:44px 20px;align-self:center}.eyebrow{font-size:10px;letter-spacing:.2em;color:var(--g2);font-weight:900}.hero h1{font-family:Cinzel,serif;font-size:clamp(34px,4.8vw,58px);line-height:1.07;margin:8px 0 12px}.hero p{margin:0;color:#eadfee;font-size:16px}.hero-img{position:relative;overflow:hidden;background:#120119}.hero-img img{width:100%;height:100%;object-fit:cover}.hero-img:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(27,2,38,.22),transparent)}
+    .date-strip{background:#fff;border-bottom:1px solid #e9dce9}.date-in{max-width:1180px;margin:auto;display:flex;gap:8px;overflow-x:auto;padding:12px 18px}.date-btn{min-width:105px;padding:9px 11px;border:1px solid #e7dae9;border-radius:12px;background:#faf7fb;display:grid;gap:2px}.date-btn span{font-size:9px;color:#7e7083;font-weight:900;letter-spacing:.06em}.date-btn strong{font-size:12px;color:var(--p)}.date-btn.active{background:linear-gradient(135deg,var(--p),var(--p3));border-color:var(--p)}.date-btn.active span,.date-btn.active strong{color:#fff}
+    .main{max-width:1180px;margin:auto;padding:22px 18px 64px}.mapcard{background:#fff;border:1px solid #e5d8e8;border-radius:22px;overflow:hidden;box-shadow:0 16px 38px rgba(46,6,63,.1)}.maphead{padding:15px 17px;display:flex;align-items:center;gap:14px;background:#fffaf4;border-bottom:1px solid #eadfe8}.maphead div:first-child{flex:1}.maphead span,.maphead strong{display:block}.maphead span{font-size:9px;letter-spacing:.16em;color:var(--g);font-weight:900}.maphead strong{font-family:Cinzel,serif;color:var(--p);font-size:17px;margin-top:3px}.view-btn{padding:10px 13px;border-radius:999px;background:#efe5f2;color:var(--p);font-weight:900;font-size:12px;border:0;cursor:pointer}
+    .poster-wrap{background:#ece7ef;padding:16px;display:grid;place-items:center}.poster{width:min(100%,900px);max-height:1050px;object-fit:contain;border-radius:14px;box-shadow:0 10px 28px rgba(0,0,0,.14);cursor:zoom-in;background:#fff}
+    .info{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}.info article{background:#fff;border:1px solid #e8dbe9;border-radius:16px;padding:16px;display:flex;gap:12px;align-items:flex-start;box-shadow:0 8px 20px rgba(48,8,66,.05)}.ico{font-size:25px}.info b{color:var(--p)}.info p{margin:4px 0 0;color:var(--muted);font-size:13px;line-height:1.5}
+    .livecard{margin-top:16px;border-radius:18px;background:linear-gradient(135deg,#2c053e,#591272);color:#fff;padding:20px;display:flex;justify-content:space-between;align-items:center;gap:18px}.livecard span{font-size:10px;color:var(--g2);font-weight:900;letter-spacing:.15em}.livecard h2{font-family:Cinzel,serif;margin:5px 0 4px;font-size:22px}.livecard p{margin:0;color:#eadfee;font-size:13px}.livecard a{padding:12px 15px;border-radius:999px;background:var(--g2);color:var(--p);font-weight:900;white-space:nowrap}
+    .pager{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:10px}.pager a{background:#fff;border:1px solid #e5d9e7;border-radius:14px;padding:13px 14px;font-size:12px;font-weight:800;color:var(--p)}.pager a:last-child{text-align:right}
+    footer{text-align:center;background:#190122;color:#fff;border-top:3px solid var(--g);padding:26px 18px;display:grid;gap:7px}footer strong{font-family:Cinzel,serif}footer span{font-size:11px;letter-spacing:.12em;color:var(--g2)}
+    .modal{position:fixed;inset:0;z-index:100;background:rgba(10,0,14,.94);display:none;align-items:center;justify-content:center;padding:20px}.modal.open{display:flex}.modal img{max-width:96vw;max-height:92vh;object-fit:contain}.close{position:absolute;top:16px;right:16px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:#fff;font-size:25px;cursor:pointer}
+    @media(max-width:760px){.brand strong{font-size:12px}.home{font-size:0}.home:after{content:"←";font-size:17px}.live{font-size:0}.live:after{content:"●";font-size:14px}.hero-in{grid-template-columns:1fr}.hero-copy{text-align:center}.hero-img{min-height:260px}.maphead{align-items:flex-start;flex-direction:column}.poster-wrap{padding:8px}.info{grid-template-columns:1fr}.livecard{flex-direction:column;text-align:center}.pager{grid-template-columns:1fr}.pager a,.pager a:last-child{text-align:center}}
+  </style>
 </head>
-<body class="route-page-v2">
-  <header class="route-header">
-    <a href="index.html" class="back-home">← Inicio</a>
-    <div class="route-brand">
-      <span>HERMANDAD DEL</span>
-      <strong>SEÑOR DE LOS MILAGROS DE COMAS</strong>
-      <small>KM 13 · “PATRÓN DE LIMA NORTE”</small>
+<body>
+<header class="top">
+  <div class="topin">
+    <div class="seal">✝</div>
+    <div class="brand"><span>HERMANDAD DEL</span><strong>SEÑOR DE LOS MILAGROS DE COMAS · KM 13</strong></div>
+    <a class="home" href="index.html">← Inicio</a>
+    <a class="live" href="map.html">● En vivo</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-in">
+    <div class="hero-copy">
+      <span class="eyebrow">RECORRIDO OFICIAL · FESTIVIDAD 2026</span>
+      <h1 id="routeTitle">Procesión</h1>
+      <p id="routeMeta">Fecha y hora</p>
     </div>
-    <a href="map.html" class="route-live">● En vivo</a>
-  </header>
+    <div class="hero-img"><img src="assets/lienzo-oficial-hsmc.png" alt="Lienzo oficial del Señor de los Milagros de Comas"></div>
+  </div>
+</section>
 
-  <main class="route-main">
-    <section class="route-hero-v2">
-      <div>
-        <span class="eyebrow">RECORRIDO OFICIAL 2026</span>
-        <h1 id="routeTitle">Procesión</h1>
-        <p id="routeMeta">Fecha y hora</p>
-      </div>
-      <div class="route-mini-lienzo">
-        <img src="assets/lienzo-oficial-hsmc.png" alt="Lienzo oficial HSMC">
-      </div>
-    </section>
+<nav class="date-strip" aria-label="Seleccionar recorrido">
+  <div class="date-in" id="dateNav"></div>
+</nav>
 
-    <section class="route-map-card">
-      <div class="route-map-head">
-        <div>
-          <span>MAPA OFICIAL</span>
-          <strong id="routeLabel">HSMC COMAS</strong>
-        </div>
-        <a href="map.html">📍 Seguir procesión en vivo</a>
-      </div>
-      <img id="routeImage" src="" alt="Mapa del recorrido procesional">
-    </section>
-
-    <section class="route-info-grid">
-      <article>
-        <span>📅</span>
-        <div><b>Fecha</b><p id="routeDate">—</p></div>
-      </article>
-      <article>
-        <span>🕐</span>
-        <div><b>Hora de salida</b><p id="routeTime">—</p></div>
-      </article>
-      <article>
-        <span>⛪</span>
-        <div><b>Hermandad</b><p>Señor de los Milagros de Comas · KM 13</p></div>
-      </article>
-    </section>
-
-    <div class="route-nav-bottom">
-      <a href="index.html">← Volver a todos los recorridos</a>
-      <a href="map.html">Procesión en vivo →</a>
+<main class="main">
+  <section class="mapcard">
+    <div class="maphead">
+      <div><span>MAPA OFICIAL</span><strong id="routeLabel">HSMC COMAS · KM 13</strong></div>
+      <button class="view-btn" type="button" onclick="openPoster()">⛶ Ampliar mapa</button>
     </div>
-  </main>
+    <div class="poster-wrap"><img id="routeImage" class="poster" src="" alt="Mapa del recorrido procesional" onclick="openPoster()"></div>
+  </section>
 
-  <footer class="footer-v2">
-    <strong>Hermandad del Señor de los Milagros de Comas · KM 13</strong>
-    <span>Fe · Devoción · Encuentro</span>
-  </footer>
+  <section class="info">
+    <article><div class="ico">📅</div><div><b>Fecha</b><p id="routeDate">—</p></div></article>
+    <article><div class="ico">🕐</div><div><b>Hora de salida</b><p id="routeTime">—</p></div></article>
+    <article><div class="ico">⛪</div><div><b>Hermandad</b><p>Señor de los Milagros de Comas · KM 13</p></div></article>
+  </section>
+
+  <section class="livecard">
+    <div><span>SEGUIMIENTO GPS</span><h2>Procesión en vivo</h2><p>Durante la salida procesional, consulta la ubicación compartida de las Sagradas Andas.</p></div>
+    <a href="map.html">Ver ubicación en vivo →</a>
+  </section>
+
+  <nav class="pager">
+    <a id="prevRoute" href="index.html#recorridos">← Recorrido anterior</a>
+    <a id="nextRoute" href="index.html#recorridos">Siguiente recorrido →</a>
+  </nav>
+</main>
+
+<footer><strong>Hermandad del Señor de los Milagros de Comas · KM 13</strong><span>“Patrón de Lima Norte” · Fe · Devoción · Encuentro</span></footer>
+
+<div class="modal" id="posterModal" onclick="closePoster(event)">
+  <button class="close" type="button" aria-label="Cerrar" onclick="closePoster(event)">×</button>
+  <img id="modalImage" src="" alt="Mapa oficial ampliado">
+</div>
 
 <script>
-const routes={
- "2026-10-08":{title:"Procesión Infantil",date:"Jueves 8 de octubre de 2026",time:"2:00 p. m.",img:"assets/recorrido-08-octubre.png"},
- "2026-10-11":{title:"Procesión Invitación",date:"Domingo 11 de octubre de 2026",time:"12:00 m.",img:"assets/recorrido-11-octubre.png"},
- "2026-10-17":{title:"Procesión Extraordinaria · Primer día",date:"Sábado 17 de octubre de 2026",time:"7:00 a. m.",img:"assets/recorrido-17-octubre.png"},
- "2026-10-18":{title:"Procesión Extraordinaria · Segundo día",date:"Domingo 18 de octubre de 2026",time:"9:00 a. m.",img:"assets/recorrido-18-octubre.png"},
- "2026-10-31":{title:"Procesión 2026 · Primer día",date:"Sábado 31 de octubre de 2026",time:"7:00 a. m.",img:"assets/recorrido-31-octubre.png"},
- "2026-11-01":{title:"Procesión 2026 · Segundo día",date:"Domingo 1 de noviembre de 2026",time:"7:00 a. m.",img:"assets/recorrido-01-noviembre.png"},
- "2026-11-07":{title:"Procesión 2026 · Tercer y último día",date:"Sábado 7 de noviembre de 2026",time:"7:00 a. m.",img:"assets/recorrido-07-noviembre.png"}
-};
-const key=new URLSearchParams(location.search).get("date")||"2026-10-08";
-const r=routes[key]||routes["2026-10-08"];
+const routeList=[
+ {key:"2026-10-08",short:"08 OCT",title:"Procesión Infantil",date:"Jueves 8 de octubre de 2026",time:"2:00 p. m.",img:"assets/recorrido-08-octubre.png"},
+ {key:"2026-10-11",short:"11 OCT",title:"Procesión Invitación",date:"Domingo 11 de octubre de 2026",time:"12:00 m.",img:"assets/recorrido-11-octubre.png"},
+ {key:"2026-10-17",short:"17 OCT",title:"Procesión Extraordinaria · Primer día",date:"Sábado 17 de octubre de 2026",time:"7:00 a. m.",img:"assets/recorrido-17-octubre.png"},
+ {key:"2026-10-18",short:"18 OCT",title:"Procesión Extraordinaria · Segundo día",date:"Domingo 18 de octubre de 2026",time:"9:00 a. m.",img:"assets/recorrido-18-octubre.png"},
+ {key:"2026-10-31",short:"31 OCT",title:"Procesión 2026 · Primer día",date:"Sábado 31 de octubre de 2026",time:"7:00 a. m.",img:"assets/recorrido-31-octubre.png"},
+ {key:"2026-11-01",short:"01 NOV",title:"Procesión 2026 · Segundo día",date:"Domingo 1 de noviembre de 2026",time:"7:00 a. m.",img:"assets/recorrido-01-noviembre.png"},
+ {key:"2026-11-07",short:"07 NOV",title:"Procesión 2026 · Tercer y último día",date:"Sábado 7 de noviembre de 2026",time:"7:00 a. m.",img:"assets/recorrido-07-noviembre.png"}
+];
+const requested=new URLSearchParams(location.search).get("date")||routeList[0].key;
+let index=routeList.findIndex(x=>x.key===requested);if(index<0)index=0;
+const r=routeList[index];
+
 document.getElementById("routeTitle").textContent=r.title;
 document.getElementById("routeMeta").textContent=r.date+" · "+r.time;
 document.getElementById("routeDate").textContent=r.date;
 document.getElementById("routeTime").textContent=r.time;
 document.getElementById("routeImage").src=r.img;
 document.getElementById("routeImage").alt="Recorrido oficial: "+r.title;
+document.getElementById("modalImage").src=r.img;
 document.title=r.title+" | HSMC Comas";
+
+document.getElementById("dateNav").innerHTML=routeList.map(x =>
+  '<a class="date-btn '+(x.key===r.key?'active':'')+'" href="route.html?date='+x.key+'"><span>RECORRIDO</span><strong>'+x.short+'</strong></a>'
+).join("");
+
+const prev=document.getElementById("prevRoute"), next=document.getElementById("nextRoute");
+if(index>0){prev.href="route.html?date="+routeList[index-1].key;prev.textContent="← "+routeList[index-1].short+" · "+routeList[index-1].title}else{prev.href="index.html#recorridos";prev.textContent="← Todos los recorridos"}
+if(index<routeList.length-1){next.href="route.html?date="+routeList[index+1].key;next.textContent=routeList[index+1].short+" · "+routeList[index+1].title+" →"}else{next.href="index.html#recorridos";next.textContent="Todos los recorridos →"}
+
+function openPoster(){document.getElementById("posterModal").classList.add("open");document.body.style.overflow="hidden"}
+function closePoster(e){if(e.target.id==="posterModal"||e.target.classList.contains("close")){document.getElementById("posterModal").classList.remove("open");document.body.style.overflow=""}}
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){document.getElementById("posterModal").classList.remove("open");document.body.style.overflow=""}})
 </script>
 </body>
 </html>
