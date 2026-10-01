@@ -64,6 +64,12 @@
   .section{padding:62px 18px 74px}.intro{max-width:850px;margin:0 auto 28px;text-align:center}.intro span{font-size:10px;color:var(--g);font-weight:900;letter-spacing:.2em}.intro h2{font-family:Cinzel,serif;color:var(--p);font-size:clamp(34px,4.8vw,54px);margin:7px 0}.intro p{color:var(--muted);line-height:1.65}
   .routes{max-width:1180px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.route{background:#fff;border:1px solid #e8d9ea;border-radius:18px;overflow:hidden;box-shadow:0 12px 28px rgba(48,8,66,.07);transition:.2s}.route:hover{transform:translateY(-3px);box-shadow:0 18px 36px rgba(48,8,66,.12)}.route img{width:100%;aspect-ratio:4/5;object-fit:cover}.route div{padding:13px}.route span,.route strong{display:block}.route span{font-size:10px;color:var(--g);font-weight:900;letter-spacing:.08em}.route strong{font-family:Cinzel,serif;color:var(--p);font-size:14px;margin-top:5px}
 
+  .video-feature{max-width:1100px;margin:0 auto 54px;padding:0 18px}
+  .video-card{overflow:hidden;border-radius:24px;background:linear-gradient(135deg,#22022f,#4a0b63);box-shadow:0 18px 42px rgba(48,8,66,.16);border:1px solid rgba(212,165,59,.35)}
+  .video-head{padding:24px 24px 18px;color:#fff}.video-head span{font-size:10px;color:var(--g2);font-weight:900;letter-spacing:.18em}.video-head h2{font-family:Cinzel,serif;font-size:clamp(25px,3.4vw,38px);margin:6px 0}.video-head p{margin:0;color:#eadfee;line-height:1.55;font-size:13px}
+  .video-player{background:#0c0011;padding:0}.video-player video{display:block;width:100%;max-height:620px;background:#000}
+  @media(max-width:620px){.video-feature{padding:0 12px;margin-bottom:38px}.video-head{padding:18px 16px 14px}.video-player video{max-height:420px}}
+
   .faith{max-width:1100px;margin:0 auto 70px;padding:32px;border-radius:24px;background:linear-gradient(135deg,#2c053e,#5b1477);color:#fff;display:flex;justify-content:space-between;align-items:center;gap:22px}.faith span{font-size:10px;color:var(--g2);font-weight:900;letter-spacing:.16em}.faith h2{font-family:Cinzel,serif;margin:6px 0;font-size:30px}.faith p{margin:0;color:#eadfee}.faith a{padding:13px 16px;border-radius:999px;background:var(--g2);color:var(--p);font-weight:900;white-space:nowrap}
   footer{text-align:center;background:#1b0226;color:#fff;padding:27px 18px;border-top:3px solid var(--g);display:grid;gap:7px}footer strong{font-family:Cinzel,serif}footer span{font-size:12px;color:var(--g2);letter-spacing:.13em}
 
@@ -163,6 +169,22 @@
         <a class="route" href="route.html?date=2026-10-31"><img src="assets/recorrido-31-octubre.png" alt="Recorrido 31 de octubre"><div><span>31 OCT · 7:00 AM</span><strong>Procesión · Primer día</strong></div></a>
         <a class="route" href="route.html?date=2026-11-01"><img src="assets/recorrido-01-noviembre.png" alt="Recorrido 1 de noviembre"><div><span>01 NOV · 7:00 AM</span><strong>Procesión · Segundo día</strong></div></a>
         <a class="route" href="route.html?date=2026-11-07"><img src="assets/recorrido-07-noviembre.png" alt="Recorrido 7 de noviembre"><div><span>07 NOV · 7:00 AM</span><strong>Procesión · Tercer y último día</strong></div></a>
+      </div>
+    </section>
+
+    <section id="video-hsmc" class="video-feature">
+      <div class="video-card">
+        <div class="video-head">
+          <span>HSMC · FESTIVIDAD 2026</span>
+          <h2>Video destacado</h2>
+          <p>Compartimos un momento especial de fe, tradición y devoción de la Hermandad del Señor de los Milagros de Comas · KM 13.</p>
+        </div>
+        <div class="video-player">
+          <video controls playsinline preload="metadata" poster="assets/lienzo-oficial-hsmc.png">
+            <source src="assets/video-hsmc-web.mp4" type="video/mp4">
+            Tu navegador no puede reproducir este video.
+          </video>
+        </div>
       </div>
     </section>
 
