@@ -121,13 +121,13 @@
 
     <section id="proxima" class="next">
       <div class="next-card">
-        <div class="next-date"><b>08</b><span>OCTUBRE</span></div>
+        <div class="next-date"><b id="nextDay">08</b><span id="nextMonth">OCTUBRE</span></div>
         <div class="next-copy">
-          <small>PRÓXIMA PROCESIÓN</small>
-          <h2>Procesión Infantil</h2>
-          <p><strong>Jueves 8 de octubre · 2:00 p. m.</strong><br>Consulta el recorrido oficial y acompaña a las Sagradas Andas.</p>
+          <small id="nextLabel">PRÓXIMA PROCESIÓN</small>
+          <h2 id="nextTitle">Procesión Infantil</h2>
+          <p id="nextText"><strong>Jueves 8 de octubre · 2:00 p. m.</strong><br>Consulta el recorrido oficial y acompaña a las Sagradas Andas.</p>
         </div>
-        <a href="route.html?date=2026-10-08">Ver recorrido →</a>
+        <a id="nextLink" href="route.html?date=2026-10-08">Ver recorrido →</a>
       </div>
     </section>
 
@@ -158,5 +158,44 @@
     <strong>Hermandad del Señor de los Milagros de Comas · KM 13</strong>
     <span>“Patrón de Lima Norte” · Fe · Devoción · Encuentro</span>
   </footer>
+<script>
+const processionSchedule=[
+  {date:"2026-10-08T14:00:00-05:00",key:"2026-10-08",day:"08",month:"OCTUBRE",title:"Procesión Infantil",display:"Jueves 8 de octubre · 2:00 p. m."},
+  {date:"2026-10-11T12:00:00-05:00",key:"2026-10-11",day:"11",month:"OCTUBRE",title:"Procesión Invitación",display:"Domingo 11 de octubre · 12:00 m."},
+  {date:"2026-10-17T07:00:00-05:00",key:"2026-10-17",day:"17",month:"OCTUBRE",title:"Procesión Extraordinaria · Primer día",display:"Sábado 17 de octubre · 7:00 a. m."},
+  {date:"2026-10-18T09:00:00-05:00",key:"2026-10-18",day:"18",month:"OCTUBRE",title:"Procesión Extraordinaria · Segundo día",display:"Domingo 18 de octubre · 9:00 a. m."},
+  {date:"2026-10-31T07:00:00-05:00",key:"2026-10-31",day:"31",month:"OCTUBRE",title:"Procesión 2026 · Primer día",display:"Sábado 31 de octubre · 7:00 a. m."},
+  {date:"2026-11-01T07:00:00-05:00",key:"2026-11-01",day:"01",month:"NOVIEMBRE",title:"Procesión 2026 · Segundo día",display:"Domingo 1 de noviembre · 7:00 a. m."},
+  {date:"2026-11-07T07:00:00-05:00",key:"2026-11-07",day:"07",month:"NOVIEMBRE",title:"Procesión 2026 · Tercer y último día",display:"Sábado 7 de noviembre · 7:00 a. m."}
+];
+
+(function updateNextProcession(){
+  const now=new Date();
+  let next=processionSchedule.find(item=>new Date(item.date)>=now);
+  const day=document.getElementById("nextDay");
+  const month=document.getElementById("nextMonth");
+  const title=document.getElementById("nextTitle");
+  const text=document.getElementById("nextText");
+  const link=document.getElementById("nextLink");
+  const label=document.getElementById("nextLabel");
+
+  if(next){
+    day.textContent=next.day;
+    month.textContent=next.month;
+    title.textContent=next.title;
+    text.innerHTML="<strong>"+next.display+"</strong><br>Consulta el recorrido oficial y acompaña a las Sagradas Andas.";
+    link.href="route.html?date="+next.key;
+    label.textContent="PRÓXIMA PROCESIÓN";
+  }else{
+    day.textContent="07";
+    month.textContent="NOVIEMBRE";
+    title.textContent="Festividad 2026";
+    text.innerHTML="<strong>Recorridos concluidos</strong><br>Consulta los mapas oficiales y revive la programación de la festividad.";
+    link.href="#recorridos";
+    link.textContent="Ver recorridos →";
+    label.textContent="FESTIVIDAD 2026";
+  }
+})();
+</script>
 </body>
 </html>
