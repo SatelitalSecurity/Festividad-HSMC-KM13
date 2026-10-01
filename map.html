@@ -3,107 +3,128 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#2b063e">
+  <meta name="theme-color" content="#22022f">
   <title>Procesión en vivo | HSMC Comas</title>
-  <meta name="description" content="Seguimiento en vivo de las Sagradas Andas del Señor de los Milagros de Comas KM 13.">
+  <meta name="description" content="Ubicación compartida de las Sagradas Andas del Señor de los Milagros de Comas KM 13.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root{--p:#22022f;--p2:#4b0b63;--p3:#651680;--g:#d4a53b;--g2:#f0cf72;--cream:#fffaf4;--muted:#75697a}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,sans-serif;background:#f5eff7;color:#211629}a{text-decoration:none;color:inherit}img{display:block;max-width:100%}
+    .top{position:sticky;top:0;z-index:50;background:rgba(27,2,38,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(240,207,114,.26);color:#fff}
+    .topin{max-width:1180px;margin:auto;padding:11px 18px;display:flex;align-items:center;gap:13px}
+    .seal{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,var(--g2),var(--g));color:var(--p);font-size:24px;font-weight:900;flex:0 0 42px}
+    .brand{min-width:0}.brand span{display:block;font-size:9px;letter-spacing:.15em;color:var(--g2)}.brand strong{font-family:Cinzel,serif;font-size:15px;white-space:nowrap}
+    .back{margin-left:auto;padding:9px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.16);font-size:12px;font-weight:800}
+    .hero{background:radial-gradient(circle at 18% 20%,rgba(240,207,114,.13),transparent 30%),linear-gradient(135deg,#1b0226,#3c0751 58%,#17011f);color:#fff;border-bottom:3px solid var(--g)}
+    .hero-in{max-width:1180px;margin:auto;display:grid;grid-template-columns:1fr 340px;min-height:320px}
+    .hero-copy{padding:45px 20px 42px;align-self:center}.eyebrow{font-size:10px;letter-spacing:.2em;color:var(--g2);font-weight:900}.hero h1{font-family:Cinzel,serif;font-size:clamp(38px,5vw,62px);margin:8px 0 12px}.hero p{max-width:720px;color:#eadfee;line-height:1.65;margin:0;font-size:16px}
+    .status-row{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-top:20px;font-size:12px}.status-dot{width:10px;height:10px;border-radius:50%;background:#37cf69;box-shadow:0 0 0 6px rgba(55,207,105,.13)}.status-chip{padding:8px 10px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12)}
+    .hero-img{position:relative;overflow:hidden;background:#120119}.hero-img img{width:100%;height:100%;object-fit:cover}.hero-img:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(27,2,38,.25),transparent)}
+    .eventbar{max-width:1180px;margin:20px auto 0;padding:0 18px}.eventcard{background:#fff;border:1px solid #e6d8e9;border-radius:18px;box-shadow:0 12px 28px rgba(48,8,66,.07);display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;padding:16px 18px}
+    .eventdate{width:70px;height:70px;border-radius:15px;background:linear-gradient(145deg,#3d0a55,#230331);border:2px solid var(--g);color:#fff;display:grid;place-items:center;align-content:center}.eventdate b{font-family:Cinzel,serif;font-size:30px;line-height:1}.eventdate span{font-size:8px;letter-spacing:.12em}
+    .eventcopy small{font-size:9px;letter-spacing:.15em;color:var(--g);font-weight:900}.eventcopy h2{font-family:Cinzel,serif;color:var(--p);font-size:19px;margin:4px 0}.eventcopy p{margin:0;color:var(--muted);font-size:13px}.eventcard a{padding:11px 13px;border-radius:11px;background:#eee4f2;color:var(--p);font-weight:800;font-size:12px}
+    .wrap{max-width:1180px;margin:auto;padding:20px 18px 64px}.mapcard{background:#fff;border:1px solid #e7d9e9;border-radius:22px;overflow:hidden;box-shadow:0 18px 42px rgba(46,6,63,.11)}
+    .maphead{display:flex;align-items:center;gap:12px;padding:15px 17px;background:linear-gradient(90deg,#340747,#591272);color:#fff}.mapicon{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(145deg,var(--g2),var(--g));color:var(--p);font-size:24px}.maptitle strong{display:block}.maptitle span{display:block;font-size:11px;color:#eadfee;margin-top:3px}.badge{margin-left:auto;background:#b91f2a;border-radius:999px;padding:6px 9px;font-size:10px;font-weight:900}
+    .mapbox{height:68vh;min-height:520px;background:#ece7ef}.mapbox iframe{width:100%;height:100%;border:0;display:block}
+    .actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:14px 16px}.actions button,.actions a{border:0;border-radius:12px;padding:13px 14px;font-weight:900;font-size:13px;text-align:center;cursor:pointer}.refresh{background:#efe6f2;color:var(--p)}.external{background:var(--p);color:#fff}
+    .tips{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:0 16px 16px}.tip{background:#faf6fb;border:1px solid #eee4f0;border-radius:13px;padding:13px;font-size:12px;color:var(--muted);line-height:1.5}.tip b{display:block;color:var(--p);margin-bottom:4px}
+    .notice{max-width:1180px;margin:0 auto 28px;padding:0 18px}.notice-inner{border-radius:14px;background:#fff7df;border:1px solid #eed79b;padding:12px 14px;color:#695123;font-size:12px;line-height:1.5}
+    footer{text-align:center;background:#190122;color:#fff;border-top:3px solid var(--g);padding:26px 18px;display:grid;gap:7px}footer strong{font-family:Cinzel,serif}footer span{font-size:11px;letter-spacing:.12em;color:var(--g2)}
+    @media(max-width:760px){.brand strong{font-size:12px}.hero-in{grid-template-columns:1fr}.hero-copy{text-align:center}.status-row{justify-content:center}.hero-img{min-height:290px}.eventcard{grid-template-columns:auto 1fr}.eventcard>a{grid-column:1/-1;text-align:center}.mapbox{height:64vh;min-height:470px}.actions{grid-template-columns:1fr}.tips{grid-template-columns:1fr}.back{font-size:0}.back:after{content:"← Inicio";font-size:12px}}
+  </style>
 </head>
-<body class="live-page">
-<header class="site-header">
-  <div class="header-inner">
-    <div class="header-mark">✝</div>
-    <div class="header-title">
-      <span>HERMANDAD DEL</span>
-      <strong>SEÑOR DE LOS MILAGROS</strong>
-      <small>KM 13 · COMAS · “PATRÓN DE LIMA NORTE”</small>
-    </div>
-    <div class="header-motto">Fe · Devoción · Encuentro</div>
+<body>
+<header class="top">
+  <div class="topin">
+    <div class="seal">✝</div>
+    <div class="brand"><span>HERMANDAD DEL</span><strong>SEÑOR DE LOS MILAGROS DE COMAS · KM 13</strong></div>
+    <a class="back" href="index.html">← Volver al inicio</a>
   </div>
-  <nav class="main-nav">
-    <a href="index.html">Inicio</a>
-    <a href="index.html#programacion">Programación 2026</a>
-    <a href="index.html#recorridos">Recorridos</a>
-    <a class="nav-active" href="map.html">Procesión en vivo</a>
-    <a href="index.html#hermandad">La Hermandad</a>
-  </nav>
 </header>
 
 <main>
-  <section class="live-hero">
-    <div class="live-hero-copy">
-      <span class="eyebrow">SEGUIMIENTO OFICIAL</span>
-      <h1>Procesión en vivo</h1>
-      <p>Sigue la ubicación compartida de las Sagradas Andas del Señor de los Milagros de Comas durante el recorrido procesional.</p>
-      <div class="live-meta">
-        <span class="live-dot"></span>
-        <strong>GPS HSMC</strong>
-        <span>·</span>
-        <span id="lastUpdate">Mapa listo</span>
-      </div>
-    </div>
-    <div class="live-lienzo">
-      <img src="assets/lienzo-oficial-hsmc.png" alt="Lienzo oficial del Señor de los Milagros de Comas">
-    </div>
-  </section>
-
-  <section class="live-content">
-    <div class="live-card pro">
-      <div class="live-top">
-        <div class="anda-badge">✝</div>
-        <div>
-          <strong>Sagradas Andas</strong>
-          <span>Hermandad del Señor de los Milagros de Comas · KM 13</span>
+  <section class="hero">
+    <div class="hero-in">
+      <div class="hero-copy">
+        <span class="eyebrow">SEGUIMIENTO OFICIAL HSMC</span>
+        <h1>Procesión en vivo</h1>
+        <p>Consulta la ubicación compartida de las Sagradas Andas durante las salidas procesionales de la Festividad 2026.</p>
+        <div class="status-row">
+          <span class="status-dot"></span>
+          <strong>Seguimiento GPS</strong>
+          <span class="status-chip" id="updated">Mapa listo</span>
         </div>
-        <div class="live-label">EN VIVO</div>
       </div>
-
-      <div class="map-wrap pro-map">
-        <iframe
-          id="liveMap"
-          title="Ubicación en vivo de las Sagradas Andas"
-          src="https://www.protrack365.com/page/share.jsp?mapType=google&token=S1794243600Df158504383d52ba5063969a4caf6c34d7b76a0108"
-          loading="eager"
-          referrerpolicy="no-referrer">
-        </iframe>
-      </div>
-
-      <div class="live-actions">
-        <button class="btn-refresh" type="button" onclick="refreshMap()">↻ Actualizar ubicación</button>
-        <a class="btn-primary" target="_blank" rel="noopener" href="https://www.protrack365.com/page/share.jsp?mapType=google&token=S1794243600Df158504383d52ba5063969a4caf6c34d7b76a0108">Abrir mapa completo</a>
-      </div>
-      <div class="live-help">
-        <div>📍 <strong>Ubicación en tiempo real</strong><span>La posición depende de la señal y transmisión del GPS instalado en las Sagradas Andas.</span></div>
-        <div>📱 <strong>Diseñado para celular</strong><span>Puedes ampliar el mapa y seguir el recorrido desde tu teléfono.</span></div>
-      </div>
-    </div>
-
-    <div class="live-back">
-      <a href="index.html#recorridos">← Ver programación y recorridos 2026</a>
+      <div class="hero-img"><img src="assets/lienzo-oficial-hsmc.png" alt="Lienzo oficial del Señor de los Milagros de Comas"></div>
     </div>
   </section>
+
+  <section class="eventbar">
+    <div class="eventcard">
+      <div class="eventdate"><b id="eventDay">08</b><span id="eventMonth">OCT</span></div>
+      <div class="eventcopy">
+        <small id="eventLabel">PRÓXIMA PROCESIÓN</small>
+        <h2 id="eventTitle">Procesión Infantil</h2>
+        <p id="eventMeta">Jueves 8 de octubre · 2:00 p. m.</p>
+      </div>
+      <a id="eventRoute" href="route.html?date=2026-10-08">Ver recorrido oficial →</a>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="mapcard">
+      <div class="maphead">
+        <div class="mapicon">✝</div>
+        <div class="maptitle">
+          <strong>Sagradas Andas</strong>
+          <span>Señor de los Milagros de Comas · KM 13</span>
+        </div>
+        <div class="badge">UBICACIÓN</div>
+      </div>
+      <div class="mapbox">
+        <iframe id="liveMap" title="Ubicación compartida de las Sagradas Andas" src="https://www.protrack365.com/page/share.jsp?mapType=google&token=S1794243600Df158504383d52ba5063969a4caf6c34d7b76a0108" loading="eager" referrerpolicy="no-referrer"></iframe>
+      </div>
+      <div class="actions">
+        <button class="refresh" type="button" onclick="refreshMap()">↻ Actualizar ubicación</button>
+        <a class="external" href="https://www.protrack365.com/page/share.jsp?mapType=google&token=S1794243600Df158504383d52ba5063969a4caf6c34d7b76a0108" target="_blank" rel="noopener">Abrir mapa completo ↗</a>
+      </div>
+      <div class="tips">
+        <div class="tip"><b>📍 Posición compartida</b>El mapa muestra la última posición transmitida por el GPS.</div>
+        <div class="tip"><b>↻ Actualización</b>Si estás siguiendo la procesión, puedes actualizar el mapa cuando lo necesites.</div>
+        <div class="tip"><b>📱 Desde el celular</b>Usa “Abrir mapa completo” para una vista más amplia.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="notice"><div class="notice-inner"><strong>Importante:</strong> si el GPS está apagado o momentáneamente sin señal, el mapa puede mostrar la última ubicación registrada hasta recibir una nueva transmisión.</div></section>
 </main>
 
-<footer>
-  <strong>HERMANDAD DEL SEÑOR DE LOS MILAGROS DE COMAS · KM 13</strong>
-  <span>Fe · Devoción · Encuentro</span>
-</footer>
+<footer><strong>Hermandad del Señor de los Milagros de Comas · KM 13</strong><span>“Patrón de Lima Norte” · Fe · Devoción · Encuentro</span></footer>
 
 <script>
-function setUpdate(){
-  const d=new Date();
-  const t=d.toLocaleTimeString('es-PE',{hour:'2-digit',minute:'2-digit'});
-  document.getElementById('lastUpdate').textContent='Actualizado '+t;
+const schedule=[
+ {at:"2026-10-08T14:00:00-05:00",key:"2026-10-08",day:"08",month:"OCT",title:"Procesión Infantil",meta:"Jueves 8 de octubre · 2:00 p. m."},
+ {at:"2026-10-11T12:00:00-05:00",key:"2026-10-11",day:"11",month:"OCT",title:"Procesión Invitación",meta:"Domingo 11 de octubre · 12:00 m."},
+ {at:"2026-10-17T07:00:00-05:00",key:"2026-10-17",day:"17",month:"OCT",title:"Procesión Extraordinaria · Primer día",meta:"Sábado 17 de octubre · 7:00 a. m."},
+ {at:"2026-10-18T09:00:00-05:00",key:"2026-10-18",day:"18",month:"OCT",title:"Procesión Extraordinaria · Segundo día",meta:"Domingo 18 de octubre · 9:00 a. m."},
+ {at:"2026-10-31T07:00:00-05:00",key:"2026-10-31",day:"31",month:"OCT",title:"Procesión 2026 · Primer día",meta:"Sábado 31 de octubre · 7:00 a. m."},
+ {at:"2026-11-01T07:00:00-05:00",key:"2026-11-01",day:"01",month:"NOV",title:"Procesión 2026 · Segundo día",meta:"Domingo 1 de noviembre · 7:00 a. m."},
+ {at:"2026-11-07T07:00:00-05:00",key:"2026-11-07",day:"07",month:"NOV",title:"Procesión 2026 · Tercer y último día",meta:"Sábado 7 de noviembre · 7:00 a. m."}
+];
+function setEvent(){
+ const now=new Date();
+ const e=schedule.find(x=>new Date(x.at)>=now)||schedule[schedule.length-1];
+ document.getElementById("eventDay").textContent=e.day;
+ document.getElementById("eventMonth").textContent=e.month;
+ document.getElementById("eventTitle").textContent=e.title;
+ document.getElementById("eventMeta").textContent=e.meta;
+ document.getElementById("eventRoute").href="route.html?date="+e.key;
 }
-function refreshMap(){
-  const f=document.getElementById('liveMap');
-  const s=f.src;
-  f.src='about:blank';
-  setTimeout(()=>{f.src=s;setUpdate();},120);
-}
-setUpdate();
+function setTime(){document.getElementById("updated").textContent="Actualizado "+new Date().toLocaleTimeString("es-PE",{hour:"2-digit",minute:"2-digit"});}
+function refreshMap(){const f=document.getElementById("liveMap"),s=f.src;f.src="about:blank";setTimeout(()=>{f.src=s;setTime();},120)}
+setEvent();setTime();
 </script>
 </body>
 </html>
