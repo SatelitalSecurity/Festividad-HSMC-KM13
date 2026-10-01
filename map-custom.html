@@ -24,8 +24,13 @@
     @keyframes pulse{0%{transform:scale(.75);opacity:.9}100%{transform:scale(1.35);opacity:0}}
     footer{background:#190122;color:#fff;border-top:2px solid var(--g);padding:10px 14px;text-align:center;font-size:10px;letter-spacing:.08em}
     @media(max-width:640px){header{padding:10px 12px}.brand strong{font-size:12px}.status{font-size:0}.status:after{content:"GPS";font-size:11px}.panel{top:10px;left:10px;right:10px}.panel h1{font-size:17px}}
-    body.embedded{grid-template-rows:1fr}
-body.embedded header,body.embe  dded footer{display:none}
+body.embedded{grid-template-rows:1fr}
+body.embedded header,body.embedded footer{display:none}
+body.embedded .panel{top:10px;left:10px;right:auto;width:auto;max-width:min(390px,calc(100% - 20px));padding:9px 12px;border-radius:12px}
+body.embedded .panel small,body.embedded .panel p{display:none}
+body.embedded .panel h1{font-size:18px;margin:0 0 5px}
+body.embedded .gpsrow{margin-top:0;font-size:10px;gap:6px}
+
   </style>
 </head>
 <body>
