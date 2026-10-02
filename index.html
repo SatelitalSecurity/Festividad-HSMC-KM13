@@ -260,5 +260,21 @@ function shareHSMC(){
   else{prompt("Copia este enlace:",shareData.url);}
 }
 </script>
+
+  <audio id="hsmcMusic" preload="metadata" loop>
+    <source src="Mi%20Viejo.mp3" type="audio/mpeg">
+  </audio>
+  <button id="musicControl" class="music-control" type="button" aria-label="Reproducir música procesional" aria-pressed="false">
+    <span class="music-icon">♫</span><span class="music-label">Música procesional</span>
+  </button>
+  <style>
+    .music-control{position:fixed;right:18px;bottom:88px;z-index:1200;display:flex;align-items:center;gap:8px;border:1px solid rgba(212,165,59,.65);border-radius:999px;padding:10px 14px;background:rgba(38,2,51,.94);color:#f0cf72;font:700 12px Inter,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.22);backdrop-filter:blur(8px);cursor:pointer}
+    .music-control:hover{background:#3b0750}.music-control.is-playing .music-icon{animation:hsmcPulse 1.4s ease-in-out infinite}.music-icon{font-size:17px;line-height:1}
+    @keyframes hsmcPulse{50%{transform:scale(1.16);opacity:.72}}
+    @media(max-width:620px){.music-control{right:14px;bottom:92px;padding:9px 12px}.music-label{font-size:11px}}
+  </style>
+  <script>
+    (()=>{const a=document.getElementById('hsmcMusic'),b=document.getElementById('musicControl'),l=b.querySelector('.music-label');a.volume=.28;b.addEventListener('click',async()=>{if(a.paused){try{await a.play();b.classList.add('is-playing');b.setAttribute('aria-pressed','true');b.setAttribute('aria-label','Pausar música procesional');l.textContent='Pausar música';}catch(e){}}else{a.pause();b.classList.remove('is-playing');b.setAttribute('aria-pressed','false');b.setAttribute('aria-label','Reproducir música procesional');l.textContent='Música procesional';}});})();
+  </script>
 </body>
 </html>
