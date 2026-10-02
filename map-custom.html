@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#22022f">
-  <title>Mapa HSMC | Seguimiento GPS</title>
+  <title>Mapa HSMC | Ubicación en vivo</title>
   <meta name="robots" content="noindex">
   <link rel="preconnect" href="https://unpkg.com">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
@@ -23,7 +23,7 @@
     .anda-pulse{position:absolute;width:72px;height:72px;border-radius:50%;background:rgba(88,18,119,.18);animation:pulse 1.8s infinite}
     @keyframes pulse{0%{transform:scale(.75);opacity:.9}100%{transform:scale(1.35);opacity:0}}
     footer{background:#190122;color:#fff;border-top:2px solid var(--g);padding:10px 14px;text-align:center;font-size:10px;letter-spacing:.08em}
-    @media(max-width:640px){header{padding:10px 12px}.brand strong{font-size:12px}.status{font-size:0}.status:after{content:"GPS";font-size:11px}.panel{top:10px;left:10px;right:10px}.panel h1{font-size:17px}}
+    @media(max-width:640px){header{padding:10px 12px}.brand strong{font-size:12px}.status{font-size:0}.status:after{content:"EN VIVO";font-size:11px}.panel{top:10px;left:10px;right:10px}.panel h1{font-size:17px}}
 body.embedded{grid-template-rows:1fr}
 body.embedded header,body.embedded footer{display:none}
 body.embedded .panel{top:10px;left:10px;right:auto;width:auto;max-width:min(390px,calc(100% - 20px));padding:9px 12px;border-radius:12px}
@@ -37,16 +37,16 @@ body.embedded .gpsrow{margin-top:0;font-size:10px;gap:6px}
 <header>
   <div class="seal">✝</div>
   <div class="brand"><strong>HERMANDAD DEL SEÑOR DE LOS MILAGROS KM 13 – COMAS</strong></div>
-  <div class="status" id="headerStatus">Preparando GPS</div>
+  <div class="status" id="headerStatus">Preparando ubicación</div>
 </header>
 
 <main>
   <div id="map" class="map"></div>
   <section class="panel">
-    <small>SEGUIMIENTO GPS OFICIAL</small>
+    <small>UBICACIÓN EN VIVO</small>
     <h1>Sagradas Andas</h1>
-    <p id="message">Esperando la conexión segura con el GPS para mostrar la ubicación real.</p>
-    <div class="gpsrow"><span class="dot" id="dot"></span><strong id="gpsStatus">GPS pendiente</strong><span id="gpsTime"></span></div>
+    <p id="message">Preparando la ubicación de las Sagradas Andas.</p>
+    <div class="gpsrow"><span class="dot" id="dot"></span><strong id="gpsStatus">Ubicación pendiente</strong><span id="gpsTime"></span></div>
   </section>
 </main>
 
@@ -73,16 +73,16 @@ let marker=null;
 let lastKey="";
 
 function setPending(msg){
-  document.getElementById("headerStatus").textContent="GPS pendiente";
+  document.getElementById("headerStatus").textContent="Ubicación pendiente";
   document.getElementById("gpsStatus").textContent="Esperando conexión";
-  document.getElementById("message").textContent=msg||"Esperando la conexión segura con el GPS para mostrar la ubicación real.";
+  document.getElementById("message").textContent=msg||"La ubicación aún no está disponible.";
   document.getElementById("dot").classList.remove("ok");
   document.getElementById("gpsTime").textContent="";
 }
 
 function setLive(d){
   const lat=Number(d.latitude),lng=Number(d.longitude);
-  if(!Number.isFinite(lat)||!Number.isFinite(lng))return setPending("La fuente GPS aún no entrega coordenadas válidas.");
+  if(!Number.isFinite(lat)||!Number.isFinite(lng))return setPending("La ubicación aún no está disponible.");
   const key=lat+","+lng;
   if(!marker){
     marker=L.marker([lat,lng],{icon}).addTo(map).bindPopup("<b>Sagradas Andas</b><br>HSMC · KM 13");
@@ -92,9 +92,9 @@ function setLive(d){
     if(key!==lastKey)map.panTo([lat,lng],{animate:true});
   }
   lastKey=key;
-  document.getElementById("headerStatus").textContent="GPS conectado";
+  document.getElementById("headerStatus").textContent="Ubicación en vivo";
   document.getElementById("gpsStatus").textContent="Ubicación disponible";
-  document.getElementById("message").textContent="Posición GPS mostrada con el marcador propio de las Sagradas Andas.";
+  document.getElementById("message").textContent="Ubicación aproximada de las Sagradas Andas durante el recorrido.";
   document.getElementById("dot").classList.add("ok");
   const gpsDate=d.gpstime?new Date(Number(d.gpstime)):null;
 document.getElementById("gpsTime").textContent=gpsDate&&!isNaN(gpsDate)?"· Última actualización: "+gpsDate.toLocaleTimeString("es-PE",{timeZone:"America/Lima",hour:"2-digit",minute:"2-digit"}):"";
@@ -108,7 +108,7 @@ async function loadLocation(){
     if(d.status==="live")setLive(d);
     else setPending(d.message);
   }catch(e){
-    setPending("Aún no está habilitada la fuente segura del GPS.");
+    setPending("La ubicación no está disponible en este momento.");
   }
 }
 loadLocation();
