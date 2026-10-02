@@ -35,7 +35,7 @@
     .wrap{max-width:1180px;margin:auto;padding:20px 18px 64px}.mapcard{background:#fff;border:1px solid #e7d9e9;border-radius:22px;overflow:hidden;box-shadow:0 18px 42px rgba(46,6,63,.11)}
     .maphead{display:flex;align-items:center;gap:12px;padding:15px 17px;background:linear-gradient(90deg,#340747,#591272);color:#fff}.mapicon{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(145deg,var(--g2),var(--g));color:var(--p);font-size:24px}.maptitle strong{display:block}.maptitle span{display:block;font-size:11px;color:#eadfee;margin-top:3px}.badge{margin-left:auto;background:#b91f2a;border-radius:999px;padding:6px 9px;font-size:10px;font-weight:900}
     .mapbox{height:68vh;min-height:520px;background:#ece7ef}.mapbox iframe{width:100%;height:100%;border:0;display:block}
-    .actions{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;padding:14px 16px}.actions button,.actions a{border:0;border-radius:12px;padding:13px 14px;font-weight:900;font-size:13px;text-align:center;cursor:pointer}.refresh{background:#efe6f2;color:var(--p)}.auto{background:#fff7df;color:#6a511d;border:1px solid #eed79b!important}.auto.on{background:#e8f7ec;color:#176b32;border-color:#b9dec4!important}.external{background:var(--p);color:#fff}
+    .actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:14px 16px}.actions button,.actions a{border:0;border-radius:12px;padding:13px 14px;font-weight:900;font-size:13px;text-align:center;cursor:pointer}.refresh{background:#efe6f2;color:var(--p)}.auto{background:#fff7df;color:#6a511d;border:1px solid #eed79b!important}.auto.on{background:#e8f7ec;color:#176b32;border-color:#b9dec4!important}.external{background:var(--p);color:#fff}
     .tips{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:0 16px 16px}.tip{background:#faf6fb;border:1px solid #eee4f0;border-radius:13px;padding:13px;font-size:12px;color:var(--muted);line-height:1.5}.tip b{display:block;color:var(--p);margin-bottom:4px}
     .notice{max-width:1180px;margin:0 auto 28px;padding:0 18px}.notice-inner{border-radius:14px;background:#fff7df;border:1px solid #eed79b;padding:12px 14px;color:#695123;font-size:12px;line-height:1.5}
     footer{text-align:center;background:#190122;color:#fff;border-top:3px solid var(--g);padding:26px 18px;display:grid;gap:7px}footer strong{font-family:Cinzel,serif}footer span{font-size:11px;letter-spacing:.12em;color:var(--g2)}
@@ -58,7 +58,7 @@
 <header class="top">
   <div class="topin">
     <div class="seal">✝</div>
-    <div class="brand"><span>HERMANDAD DEL</span><strong>SEÑOR DE LOS MILAGROS DE COMAS · KM 13</strong></div>
+    <div class="brand"><strong>HERMANDAD DEL SEÑOR DE LOS MILAGROS KM 13 – COMAS</strong></div>
     <a class="back" href="index.html">← Volver al inicio</a>
   </div>
 </header>
@@ -98,7 +98,7 @@
         <div class="mapicon">✝</div>
         <div class="maptitle">
           <strong>Sagradas Andas</strong>
-          <span>Señor de los Milagros de Comas · KM 13</span>
+          <span>Hermandad del Señor de los Milagros KM 13 – Comas</span>
         </div>
         <div class="badge">UBICACIÓN</div>
       </div>
@@ -107,7 +107,7 @@
       </div>
       <div class="actions">
         <button class="refresh" type="button" onclick="refreshMap()">↻ Actualizar ubicación</button>
-        <button class="auto" id="autoRefreshBtn" type="button" onclick="toggleAutoRefresh()">Autoactualizar: OFF</button>
+        
         <a class="external" href="map-custom.html" target="_blank" rel="noopener">Abrir mapa completo ↗</a>
       </div>
       <div class="tips">
@@ -121,7 +121,7 @@
   <section class="notice"><div class="notice-inner"><strong>Importante:</strong> si el GPS está apagado o momentáneamente sin señal, el mapa puede mostrar la última ubicación registrada hasta recibir una nueva transmisión.</div></section>
 </main>
 
-<footer><strong>Hermandad del Señor de los Milagros de Comas · KM 13</strong><span>“Patrón de Lima Norte” · Fe · Devoción · Encuentro</span></footer>
+<footer><strong>Hermandad del Señor de los Milagros KM 13 – Comas</strong><span>“Patrón de Lima Norte” · Fe · Devoción · Encuentro</span></footer>
 
 <script>
 const schedule=[
@@ -156,17 +156,6 @@ function setEvent(){
 }
 function setTime(){document.getElementById("updated").textContent="Vista actualizada "+new Date().toLocaleTimeString("es-PE",{hour:"2-digit",minute:"2-digit"});}
 function refreshMap(){const f=document.getElementById("liveMap"),s=f.src;f.src="about:blank";setTimeout(()=>{f.src=s;setTime();},120)}
-let autoRefreshTimer=null;
-function toggleAutoRefresh(){
- const btn=document.getElementById("autoRefreshBtn");
- if(autoRefreshTimer){
-   clearInterval(autoRefreshTimer);autoRefreshTimer=null;
-   btn.textContent="Autoactualizar: OFF";btn.classList.remove("on");
- }else{
-   autoRefreshTimer=setInterval(()=>{if(document.visibilityState==="visible")refreshMap();},60000);
-   btn.textContent="Autoactualizar: 60 s";btn.classList.add("on");
- }
-}
 setEvent();setTime();
 </script>
 
