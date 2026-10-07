@@ -1,9 +1,13 @@
-export async function onRequestGet({request}){
-  const url=new URL(request.url);
-  const target=url.origin+"/gallery.json?ts="+Date.now();
-  const r=await fetch(target,{cf:{cacheTtl:0,cacheEverything:false}});
-  if(!r.ok)return new Response(JSON.stringify({photos:[]}),{headers:{"Content-Type":"application/json; charset=utf-8","Cache-Control":"no-store"}});
-  let data=[]; try{data=await r.json()}catch{}
-  const photos=(Array.isArray(data)?data:[]).filter(p=>p&&p.published).sort((a,b)=>String(b.date||b.createdAt||"").localeCompare(String(a.date||a.createdAt||"")));
-  return new Response(JSON.stringify({photos}),{headers:{"Content-Type":"application/json; charset=utf-8","Cache-Control":"no-store"}});
+const META_PREFIX="meta:";
+export async function onRequestGet({env}){
+  if(!env.HSMC_GALLERY)return new Response(JSON.stringify({photos:[]}),{headers:{"Content-Type":"application/json; charset=utf-8","Cache-Control":"no-store"}});
+  const out=[]; let cursor;
+  do{
+    const page=await env.HSMC_GALLERY.list({prefix:META_PREFIX,cursor});
+    const vals=await Promise.all(page.keys.map(k=>env.HSMC_GALLERY.get(k.name,"json")));
+    for(const v of vals)if(v&&v.published)out.push(v);
+    cursor=page.list_complete?undefined:page.cursor;
+  }while(cursor);
+  out.sort((a,b)=>String(b.date||b.createdAt||"").localeCompare(String(a.date||a.createdAt||"")));
+  return new Response(JSON.stringify({photos:out}),{headers:{"Content-Type":"application/json; charset=utf-8","Cache-Control":"public, max-age=30"}});
 }
