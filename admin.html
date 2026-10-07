@@ -19,7 +19,7 @@
     label{display:grid;gap:7px;font-size:12px;font-weight:800;color:#514556}
     input,textarea,select{width:100%;border:1px solid #d9cddd;border-radius:12px;padding:12px 13px;background:#fff;color:var(--ink);outline:none}
     input:focus,textarea:focus,select:focus{border-color:var(--p2);box-shadow:0 0 0 3px rgba(74,11,99,.09)}
-    textarea{min-height:88px;resize:vertical}
+    textarea{min-height:150px;resize:vertical}
     .btn{border:0;border-radius:12px;padding:12px 15px;font-weight:900}.btn-main{background:var(--p);color:#fff}.btn-gold{background:linear-gradient(135deg,var(--g2),var(--g));color:var(--p)}.btn-ghost{background:#f2eaf4;color:var(--p)}.btn-danger{background:#fff0f0;color:var(--danger);border:1px solid #f0c7c7}
     .actions{display:flex;gap:9px;flex-wrap:wrap;align-items:center}.status{font-size:12px;font-weight:800}.status.ok{color:var(--ok)}.status.error{color:var(--danger)}
     .dashboard-head{display:flex;justify-content:space-between;gap:15px;align-items:center;margin-bottom:18px}
@@ -83,7 +83,7 @@
           <input id="files" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif" multiple required>
         </label>
         <label class="full">Descripción
-          <textarea id="description" maxlength="1500" placeholder="Descripción del evento, mensaje institucional o reseña."></textarea>
+          <textarea id="description" maxlength="5000" placeholder="Descripción del evento, mensaje institucional, reseña o historia."></textarea>
         </label>
         <div class="upload-row full">
           <label class="check"><input id="published" type="checkbox" checked> Publicar inmediatamente</label>
@@ -112,7 +112,7 @@
       <label class="full">Título<input id="editTitle" maxlength="90" required></label>
       <label>Fecha<input id="editDate" type="date" required></label>
       <label>Categoría<input id="editCategory" maxlength="60"></label>
-      <label class="full">Descripción<textarea id="editDescription" maxlength="1500"></textarea></label>
+      <label class="full">Descripción<textarea id="editDescription" maxlength="5000"></textarea></label>
       <label class="check full"><input id="editPublished" type="checkbox"> Publicada</label>
       <div class="actions full" style="justify-content:flex-end">
         <button class="btn btn-ghost" value="cancel">Cancelar</button>
