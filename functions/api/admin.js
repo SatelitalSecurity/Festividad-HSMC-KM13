@@ -86,7 +86,7 @@ export async function onRequest(context){
       title:clean(form.get("title"),90)||"Festividad HSMC",
       date:clean(form.get("date"),10),
       category:clean(form.get("category"),60)||"Festividad 2026",
-      description:clean(form.get("description"),1500),
+      description:clean(form.get("description"),5000),
       published:String(form.get("published"))==="true",
       createdAt:new Date().toISOString()
     };
@@ -105,7 +105,7 @@ export async function onRequest(context){
       title:clean(body.title,90)||current.title,
       date:clean(body.date,10),
       category:clean(body.category,60)||"Festividad 2026",
-      description:clean(body.description,1500),
+      description:clean(body.description,5000),
       published:!!body.published,
       updatedAt:new Date().toISOString()
     };
