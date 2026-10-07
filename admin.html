@@ -19,10 +19,10 @@
     label{display:grid;gap:7px;font-size:12px;font-weight:800;color:#514556}
     input,textarea,select{width:100%;border:1px solid #d9cddd;border-radius:12px;padding:12px 13px;background:#fff;color:var(--ink);outline:none}
     input:focus,textarea:focus,select:focus{border-color:var(--p2);box-shadow:0 0 0 3px rgba(74,11,99,.09)}
-    textarea{min-height:150px;resize:vertical}
+    textarea{min-height:110px;resize:vertical}.long-text{min-height:240px}
     .btn{border:0;border-radius:12px;padding:12px 15px;font-weight:900}.btn-main{background:var(--p);color:#fff}.btn-gold{background:linear-gradient(135deg,var(--g2),var(--g));color:var(--p)}.btn-ghost{background:#f2eaf4;color:var(--p)}.btn-danger{background:#fff0f0;color:var(--danger);border:1px solid #f0c7c7}
     .actions{display:flex;gap:9px;flex-wrap:wrap;align-items:center}.status{font-size:12px;font-weight:800}.status.ok{color:var(--ok)}.status.error{color:var(--danger)}
-    .dashboard-head{display:flex;justify-content:space-between;gap:15px;align-items:center;margin-bottom:18px}
+    .dashboard-head{display:flex;justify-content:space-between;gap:15px;align-items:center;margin-bottom:18px}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}.tab{border:1px solid #dfd1e4;background:#fff;color:var(--p);padding:11px 15px;border-radius:999px;font-weight:900}.tab.active{background:var(--p);color:#fff;border-color:var(--p)}.module[hidden]{display:none!important}
     .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.full{grid-column:1/-1}
     .upload-row{display:flex;justify-content:space-between;gap:14px;align-items:center;margin-top:16px}.check{display:flex;align-items:center;gap:8px;font-weight:800;color:var(--p)}.check input{width:auto}
     .photo-list{display:grid;gap:12px;margin-top:18px}.photo{display:grid;grid-template-columns:120px 1fr auto;gap:14px;align-items:center;padding:12px;border:1px solid #e8dbe9;border-radius:16px;background:#fff}.photo img{width:120px;height:92px;object-fit:cover;border-radius:12px;background:#eee}.photo h3{margin:0 0 5px;font-size:16px;color:var(--p)}.meta{font-size:12px;color:var(--muted);line-height:1.5}.pill{display:inline-block;margin-top:5px;padding:4px 8px;border-radius:999px;background:#efe7f2;color:var(--p);font-size:10px;font-weight:900}.pill.pub{background:#e5f6ea;color:#176833}
@@ -44,7 +44,7 @@
 <main class="wrap">
   <section id="loginView" class="card login">
     <h1>Panel administrativo</h1>
-    <p class="muted">Acceso reservado para la administración de la galería de la Festividad 2026.</p>
+    <p class="muted">Acceso reservado para administrar comunicados y fotografías de la Hermandad.</p>
     <form id="loginForm" class="grid">
       <label class="full">Contraseña
         <input id="password" type="password" autocomplete="current-password" required>
@@ -56,9 +56,62 @@
 
   <section id="dashboard" hidden>
     <div class="dashboard-head">
-      <div><h1 class="panel-title">Galería de la festividad</h1><div class="muted">Sube, publica, edita u oculta fotografías sin tocar el código de la web.</div></div>
+      <div><h1 class="panel-title">Administración de contenidos</h1><div class="muted">Publica comunicados y administra la galería sin modificar el código.</div></div>
+    </div>
+    <div class="tabs">
+      <button class="tab active" type="button" data-tab="notices">📢 Comunicados</button>
+      <button class="tab" type="button" data-tab="gallery">📷 Galería</button>
     </div>
 
+    <section id="noticesModule" class="module">
+      <section class="card">
+        <h2 class="panel-title" style="font-size:22px">Nuevo comunicado</h2>
+        <form id="noticeForm" class="grid">
+          <label>Título
+            <input id="noticeTitle" required maxlength="120" placeholder="Ej. EXPO MILAGRINA 2026">
+          </label>
+          <label>Fecha
+            <input id="noticeDate" type="date" required>
+          </label>
+          <label>Tipo
+            <select id="noticeType">
+              <option>Comunicado</option>
+              <option>Actividad</option>
+              <option>Invitación</option>
+              <option>Aviso</option>
+              <option>Noticia</option>
+            </select>
+          </label>
+          <label>Imagen o afiche
+            <input id="noticeImage" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+          </label>
+          <label class="full">Bajada / frase central
+            <input id="noticeSubtitle" maxlength="180" placeholder="Ej. Una sola Hermandad, una historia de fe...">
+          </label>
+          <label class="full">Contenido completo
+            <textarea id="noticeBody" class="long-text" maxlength="5000" placeholder="Texto completo del comunicado, actividad o invitación." required></textarea>
+          </label>
+          <div class="upload-row full">
+            <div class="actions">
+              <label class="check"><input id="noticePublished" type="checkbox" checked> Publicar</label>
+              <label class="check"><input id="noticeFeatured" type="checkbox" checked> Destacar en inicio</label>
+            </div>
+            <button class="btn btn-main" type="submit">Publicar comunicado</button>
+          </div>
+          <div id="noticeStatus" class="status full"></div>
+        </form>
+      </section>
+
+      <section class="card" style="margin-top:18px">
+        <div class="dashboard-head" style="margin:0">
+          <div><h2 class="panel-title" style="font-size:22px">Comunicados publicados</h2><div class="muted">Puedes editar, ocultar o eliminar cada publicación.</div></div>
+          <button id="reloadNoticesBtn" class="btn btn-ghost" type="button">Actualizar lista</button>
+        </div>
+        <div id="noticeList" class="photo-list"><div class="empty">Cargando…</div></div>
+      </section>
+    </section>
+
+    <section id="galleryModule" class="module" hidden>
     <section class="card">
       <h2 class="panel-title" style="font-size:22px">Subir fotografías</h2>
       <form id="uploadForm" class="grid">
@@ -83,7 +136,7 @@
           <input id="files" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif" multiple required>
         </label>
         <label class="full">Descripción
-          <textarea id="description" maxlength="5000" placeholder="Descripción del evento, mensaje institucional, reseña o historia."></textarea>
+          <textarea id="description" maxlength="300" placeholder="Descripción breve de la fotografía o momento."></textarea>
         </label>
         <div class="upload-row full">
           <label class="check"><input id="published" type="checkbox" checked> Publicar inmediatamente</label>
@@ -101,8 +154,30 @@
       </div>
       <div id="photoList" class="photo-list"><div class="empty">Cargando…</div></div>
     </section>
+    </section>
   </section>
 </main>
+
+<dialog id="noticeEditDialog">
+  <form method="dialog" class="modal" id="noticeEditForm">
+    <h2>Editar comunicado</h2>
+    <input id="noticeEditId" type="hidden">
+    <div class="grid">
+      <label class="full">Título<input id="noticeEditTitle" maxlength="120" required></label>
+      <label>Fecha<input id="noticeEditDate" type="date" required></label>
+      <label>Tipo<input id="noticeEditType" maxlength="40"></label>
+      <label class="full">Bajada / frase central<input id="noticeEditSubtitle" maxlength="180"></label>
+      <label class="full">Contenido<textarea id="noticeEditBody" class="long-text" maxlength="5000" required></textarea></label>
+      <label class="check"><input id="noticeEditPublished" type="checkbox"> Publicado</label>
+      <label class="check"><input id="noticeEditFeatured" type="checkbox"> Destacado en inicio</label>
+      <div class="actions full" style="justify-content:flex-end">
+        <button class="btn btn-ghost" value="cancel">Cancelar</button>
+        <button class="btn btn-main" value="default">Guardar cambios</button>
+      </div>
+      <div id="noticeEditStatus" class="status full"></div>
+    </div>
+  </form>
+</dialog>
 
 <dialog id="editDialog">
   <form method="dialog" class="modal" id="editForm">
@@ -112,7 +187,7 @@
       <label class="full">Título<input id="editTitle" maxlength="90" required></label>
       <label>Fecha<input id="editDate" type="date" required></label>
       <label>Categoría<input id="editCategory" maxlength="60"></label>
-      <label class="full">Descripción<textarea id="editDescription" maxlength="5000"></textarea></label>
+      <label class="full">Descripción<textarea id="editDescription" maxlength="300"></textarea></label>
       <label class="check full"><input id="editPublished" type="checkbox"> Publicada</label>
       <div class="actions full" style="justify-content:flex-end">
         <button class="btn btn-ghost" value="cancel">Cancelar</button>
@@ -126,7 +201,15 @@
 <script>
 const $=s=>document.querySelector(s);
 const loginView=$("#loginView"),dashboard=$("#dashboard"),logoutBtn=$("#logoutBtn"),photoList=$("#photoList");
-let photos=[];
+let photos=[],notices=[];
+
+document.querySelectorAll(".tab").forEach(btn=>btn.addEventListener("click",()=>{
+  document.querySelectorAll(".tab").forEach(x=>x.classList.toggle("active",x===btn));
+  const noticesTab=btn.dataset.tab==="notices";
+  $("#noticesModule").hidden=!noticesTab;
+  $("#galleryModule").hidden=noticesTab;
+  if(noticesTab)loadNotices(); else loadPhotos();
+}));
 
 async function api(action,options={}){
   const r=await fetch("/api/admin?action="+encodeURIComponent(action),{credentials:"same-origin",...options});
@@ -139,16 +222,87 @@ function setLogged(logged){
   loginView.hidden=logged; dashboard.hidden=!logged; logoutBtn.hidden=!logged;
 }
 async function checkSession(){
-  try{await api("session");setLogged(true);await loadPhotos()}catch{setLogged(false)}
+  try{await api("session");setLogged(true);await loadNotices()}catch{setLogged(false)}
 }
 $("#loginForm").addEventListener("submit",async e=>{
   e.preventDefault(); const status=$("#loginStatus"); status.textContent="Ingresando…";status.className="status";
   try{
     await api("login",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({password:$("#password").value})});
-    $("#password").value=""; status.textContent=""; setLogged(true); await loadPhotos();
+    $("#password").value=""; status.textContent=""; setLogged(true); await loadNotices();
   }catch(err){status.textContent=err.message;status.className="status error"}
 });
 logoutBtn.addEventListener("click",async()=>{try{await api("logout",{method:"POST"})}catch{}setLogged(false)});
+
+async function loadNotices(){
+  const list=$("#noticeList"); list.innerHTML='<div class="empty">Cargando…</div>';
+  try{
+    const data=await api("notices-list"); notices=data.notices||[];
+    if(!notices.length){list.innerHTML='<div class="empty">Aún no hay comunicados. Publica el primero arriba.</div>';return}
+    list.innerHTML=notices.map(n=>`
+      <article class="photo" data-id="${n.id}">
+        ${n.url?'<img src="'+n.url+'" alt="">':'<div style="width:120px;height:92px;border-radius:12px;background:#f1e8f3;display:grid;place-items:center;font-size:30px">📢</div>'}
+        <div>
+          <h3>${escapeHtml(n.title||"Comunicado")}</h3>
+          <div class="meta">${escapeHtml(formatDate(n.date))} · ${escapeHtml(n.type||"Comunicado")}</div>
+          <span class="pill ${n.published?"pub":""}">${n.published?"PUBLICADO":"OCULTO"}</span>
+          ${n.featured?'<span class="pill pub" style="margin-left:5px">DESTACADO</span>':''}
+        </div>
+        <div class="actions">
+          <button class="btn btn-ghost" onclick="openNoticeEdit('${n.id}')">Editar</button>
+          <button class="btn btn-ghost" onclick="toggleNotice('${n.id}',${!n.published})">${n.published?"Ocultar":"Publicar"}</button>
+          <button class="btn btn-danger" onclick="deleteNotice('${n.id}')">Eliminar</button>
+        </div>
+      </article>`).join("");
+  }catch(err){list.innerHTML='<div class="empty">'+escapeHtml(err.message)+'</div>'}
+}
+$("#reloadNoticesBtn").addEventListener("click",loadNotices);
+
+$("#noticeForm").addEventListener("submit",async e=>{
+  e.preventDefault(); const status=$("#noticeStatus"); status.textContent="Publicando…"; status.className="status";
+  try{
+    const fd=new FormData();
+    const f=$("#noticeImage").files[0];
+    if(f)fd.append("image",await sanitizeImage(f));
+    fd.append("title",$("#noticeTitle").value.trim());
+    fd.append("date",$("#noticeDate").value);
+    fd.append("type",$("#noticeType").value);
+    fd.append("subtitle",$("#noticeSubtitle").value.trim());
+    fd.append("body",$("#noticeBody").value.trim());
+    fd.append("published",$("#noticePublished").checked?"true":"false");
+    fd.append("featured",$("#noticeFeatured").checked?"true":"false");
+    await api("notice-create",{method:"POST",body:fd});
+    status.textContent="Comunicado publicado correctamente."; status.className="status ok";
+    $("#noticeImage").value=""; $("#noticeBody").value=""; $("#noticeSubtitle").value="";
+    await loadNotices();
+  }catch(err){status.textContent=err.message;status.className="status error"}
+});
+window.toggleNotice=async(id,published)=>{
+  const n=notices.find(x=>x.id===id); if(!n)return;
+  try{await api("notice-update",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({...n,published})});await loadNotices()}catch(err){alert(err.message)}
+};
+window.deleteNotice=async id=>{
+  if(!confirm("¿Eliminar definitivamente este comunicado?"))return;
+  try{await api("notice-delete",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({id})});await loadNotices()}catch(err){alert(err.message)}
+};
+window.openNoticeEdit=id=>{
+  const n=notices.find(x=>x.id===id); if(!n)return;
+  $("#noticeEditId").value=n.id; $("#noticeEditTitle").value=n.title||""; $("#noticeEditDate").value=n.date||"";
+  $("#noticeEditType").value=n.type||""; $("#noticeEditSubtitle").value=n.subtitle||""; $("#noticeEditBody").value=n.body||"";
+  $("#noticeEditPublished").checked=!!n.published; $("#noticeEditFeatured").checked=!!n.featured; $("#noticeEditStatus").textContent="";
+  $("#noticeEditDialog").showModal();
+};
+$("#noticeEditForm").addEventListener("submit",async e=>{
+  if(e.submitter?.value==="cancel")return;
+  e.preventDefault(); const status=$("#noticeEditStatus"); status.textContent="Guardando…";
+  try{
+    await api("notice-update",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({
+      id:$("#noticeEditId").value,title:$("#noticeEditTitle").value.trim(),date:$("#noticeEditDate").value,type:$("#noticeEditType").value.trim(),
+      subtitle:$("#noticeEditSubtitle").value.trim(),body:$("#noticeEditBody").value.trim(),
+      published:$("#noticeEditPublished").checked,featured:$("#noticeEditFeatured").checked
+    })});
+    $("#noticeEditDialog").close(); await loadNotices();
+  }catch(err){status.textContent=err.message;status.className="status error"}
+});
 
 function formatDate(v){
   if(!v)return "Sin fecha";
@@ -237,7 +391,7 @@ $("#editForm").addEventListener("submit",async e=>{
   }catch(err){status.textContent=err.message;status.className="status error"}
 });
 
-$("#date").value=new Intl.DateTimeFormat("en-CA",{timeZone:"America/Lima"}).format(new Date());
+const todayPE=new Intl.DateTimeFormat("en-CA",{timeZone:"America/Lima"}).format(new Date()); $("#date").value=todayPE; $("#noticeDate").value=todayPE;
 checkSession();
 </script>
 </body>
