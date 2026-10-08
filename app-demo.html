@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#260233">
+<title>HSMC KM13 | Aplicación móvil · Demo</title>
+<meta name="description" content="Demostración de la futura aplicación móvil HSMC KM13.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --purple:#260233;--purple2:#4a0b63;--purple3:#65147e;
+  --gold:#d4a53b;--gold2:#f0cf72;--ink:#211629;--muted:#756a78;
+  --paper:#fff;--bg:#f2edf4;--line:#e7dce9;--soft:#faf7fb;
+  --shadow:0 28px 90px rgba(28,2,39,.22);
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 15% 12%,rgba(212,165,59,.08),transparent 26%),linear-gradient(135deg,#f7f2f8,#eee7f0);font-family:Manrope,system-ui,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}a{color:inherit}button,a{touch-action:manipulation}button{font:inherit}.stage{min-height:100vh;display:grid;grid-template-columns:minmax(320px,520px) minmax(360px,520px);gap:70px;align-items:center;justify-content:center;padding:46px}.present{max-width:520px}.present .eyebrow{color:var(--purple2);font-size:10px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.present h1{font-family:Cinzel,serif;color:var(--purple);font-size:clamp(38px,5vw,66px);line-height:1.02;letter-spacing:-.03em;margin:12px 0 18px}.present p{color:var(--muted);font-size:15px;line-height:1.8}.present-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px}.present-card{background:rgba(255,255,255,.72);border:1px solid var(--line);border-radius:16px;padding:18px;backdrop-filter:blur(12px)}.present-card span{display:block;color:var(--gold);font-family:Cinzel,serif;font-size:22px}.present-card strong{display:block;color:var(--purple);font-size:12px;margin-top:8px}.present-card small{display:block;color:var(--muted);font-size:10px;line-height:1.5;margin-top:4px}.demo-note{margin-top:22px;padding:14px 16px;border-left:3px solid var(--gold);background:#fffaf0;border-top:1px solid #ead8ac;border-right:1px solid #ead8ac;border-bottom:1px solid #ead8ac;border-radius:11px;color:#695526;font-size:11px;line-height:1.6}.demo-note b{color:#49370f}.phone-wrap{display:grid;place-items:center}.phone{width:390px;max-width:100%;height:820px;background:#111;border:10px solid #19151c;border-radius:44px;box-shadow:var(--shadow);overflow:hidden;position:relative}.phone:before{content:"";position:absolute;top:8px;left:50%;transform:translateX(-50%);width:112px;height:24px;border-radius:0 0 15px 15px;background:#111;z-index:50}.screen{position:absolute;inset:0;background:var(--bg);overflow:hidden;border-radius:34px}.statusbar{height:36px;background:var(--purple);color:#fff;display:flex;justify-content:space-between;align-items:center;padding:7px 18px 0;font-size:10px;font-weight:800}.appbar{height:72px;background:linear-gradient(110deg,#1f022a,#4a0b63);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid rgba(240,207,114,.16)}.appbrand{display:flex;align-items:center;gap:10px}.appmark{width:40px;height:40px;border:1px solid rgba(240,207,114,.65);border-radius:50%;display:grid;place-items:center;color:var(--gold2);font-family:Cinzel,serif;font-size:18px}.appbrand strong{display:block;font-family:Cinzel,serif;font-size:13px}.appbrand small{display:block;color:#d4c4da;font-size:7px;letter-spacing:.11em;text-transform:uppercase;margin-top:2px}.bell{position:relative;border:0;background:rgba(255,255,255,.08);color:#fff;width:38px;height:38px;border-radius:12px;cursor:pointer}.bell:after{content:"2";position:absolute;right:-2px;top:-4px;width:17px;height:17px;border-radius:50%;background:var(--gold);color:var(--purple);display:grid;place-items:center;font-size:8px;font-weight:900}.pages{height:calc(100% - 36px - 72px - 70px);overflow-y:auto;scrollbar-width:none}.pages::-webkit-scrollbar{display:none}.page{display:none;padding-bottom:24px}.page.active{display:block}.hero{position:relative;height:252px;overflow:hidden;background:#16011f}.hero img{width:100%;height:100%;object-fit:cover}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,1,31,.05),rgba(22,1,31,.84))}.hero-copy{position:absolute;left:18px;right:18px;bottom:18px;z-index:2;color:#fff}.hero-copy span{color:var(--gold2);font-size:8px;font-weight:900;letter-spacing:.14em;text-transform:uppercase}.hero-copy h2{font-family:Cinzel,serif;font-size:24px;line-height:1.08;margin:7px 0}.hero-copy p{font-size:10px;line-height:1.55;color:#e6dbe9;margin:0}.section{padding:18px}.quick{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.qbtn{border:1px solid var(--line);background:#fff;border-radius:14px;padding:11px 6px;text-align:center;cursor:pointer;color:var(--purple);box-shadow:0 6px 18px rgba(38,2,51,.035)}.qbtn b{display:grid;place-items:center;margin:auto;width:34px;height:34px;border-radius:11px;background:#f4edf5;color:var(--purple2);font-size:15px}.qbtn span{display:block;font-size:8px;font-weight:900;margin-top:6px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:10px;margin:18px 0 10px}.section-head h3{font-size:14px;color:var(--purple);margin:0}.section-head button{border:0;background:none;color:var(--purple2);font-size:9px;font-weight:900;cursor:pointer}.notice-card{background:linear-gradient(135deg,#2a0437,#54106c);border-radius:17px;padding:17px;color:#fff;position:relative;overflow:hidden}.notice-card:after{content:"✦";position:absolute;right:13px;bottom:-16px;color:rgba(240,207,114,.11);font-size:82px}.notice-card span{position:relative;color:var(--gold2);font-size:8px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.notice-card h4{position:relative;font-family:Cinzel,serif;font-size:17px;margin:7px 0}.notice-card p{position:relative;font-size:9px;line-height:1.6;color:#dfd3e2;margin:0}.notice-card a{position:relative;display:inline-flex;margin-top:11px;padding:8px 10px;border-radius:9px;background:var(--gold);color:#2b1930;text-decoration:none;font-size:8px;font-weight:900}.cards{display:grid;gap:10px}.card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:14px}.card small{color:var(--purple2);font-size:7px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}.card h4{color:var(--purple);font-size:12px;margin:5px 0}.card p{color:var(--muted);font-size:9px;line-height:1.55;margin:0}.card-footer{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-top:10px;padding-top:9px;border-top:1px solid var(--line)}.card-footer span{color:#8d8192;font-size:8px}.linkbtn{border:0;background:none;color:var(--purple2);font-size:8px;font-weight:900;cursor:pointer;padding:0}.event-list{display:grid;gap:9px}.event{display:grid;grid-template-columns:54px 1fr auto;gap:10px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px}.date{background:var(--purple);color:#fff;border-radius:11px;text-align:center;padding:8px 4px;font-weight:900;font-size:14px}.date span{display:block;color:var(--gold2);font-size:7px;letter-spacing:.1em}.event h4{font-size:10px;color:var(--purple);margin:0 0 3px}.event p{font-size:8px;color:var(--muted);margin:0}.tag{padding:6px 7px;border-radius:999px;background:#fff8e5;color:#8c620c;font-size:7px;font-weight:900}.banner{margin:0 18px 18px;background:linear-gradient(135deg,#fff,#f7f1f8);border:1px solid var(--line);border-radius:17px;padding:16px}.banner span{color:var(--purple2);font-size:8px;font-weight:900;text-transform:uppercase;letter-spacing:.1em}.banner h3{font-family:Cinzel,serif;color:var(--purple);font-size:16px;margin:7px 0}.banner p{color:var(--muted);font-size:9px;line-height:1.55}.banner a{display:inline-flex;margin-top:8px;text-decoration:none;background:var(--purple);color:#fff;padding:9px 11px;border-radius:9px;font-size:8px;font-weight:900}.page-title{padding:20px 18px 8px}.page-title span{color:var(--purple2);font-size:8px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.page-title h2{font-family:Cinzel,serif;color:var(--purple);font-size:24px;margin:6px 0}.page-title p{color:var(--muted);font-size:9px;line-height:1.55;margin:0}.gallery{display:grid;grid-template-columns:1fr 1fr;gap:9px;padding:0 18px}.gallery div{height:130px;border-radius:14px;background-size:cover;background-position:center;position:relative;overflow:hidden}.gallery div:first-child{grid-column:1/-1;height:190px}.gallery div:after{content:"HSMC KM13";position:absolute;left:9px;bottom:8px;background:rgba(38,2,51,.82);color:#fff;padding:5px 7px;border-radius:999px;font-size:7px;font-weight:900}.profile-card{margin:8px 18px;background:#fff;border:1px solid var(--line);border-radius:17px;padding:18px;text-align:center}.profile-mark{width:68px;height:68px;margin:auto;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#2a0437,#5d1578);color:var(--gold2);font-family:Cinzel,serif;font-size:28px}.profile-card h3{font-family:Cinzel,serif;color:var(--purple);font-size:18px;margin:12px 0 5px}.profile-card p{color:var(--muted);font-size:9px;line-height:1.55;margin:0}.menu-list{display:grid;gap:8px;padding:10px 18px}.menu-item{border:1px solid var(--line);background:#fff;border-radius:13px;padding:13px;display:flex;justify-content:space-between;align-items:center;gap:12px;text-decoration:none;color:var(--purple);font-size:9px;font-weight:900}.menu-item span{color:#9a8ba0;font-weight:600}.bottom{position:absolute;left:0;right:0;bottom:0;height:70px;background:rgba(255,255,255,.96);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(5,1fr);padding:5px 4px 8px;backdrop-filter:blur(14px);z-index:30}.tab{border:0;background:transparent;color:#948899;display:grid;place-items:center;align-content:center;gap:3px;font-size:7px;font-weight:900;cursor:pointer}.tab b{font-size:16px;line-height:1}.tab.active{color:var(--purple)}.tab.active b{color:var(--gold)}.drawer{position:absolute;inset:36px 0 70px;background:rgba(17,3,22,.42);z-index:45;display:none;align-items:flex-start;justify-content:flex-end}.drawer.open{display:flex}.drawer-box{width:86%;max-height:100%;overflow-y:auto;background:#fff;border-radius:0 0 0 22px;padding:18px;box-shadow:-18px 16px 44px rgba(0,0,0,.2)}.drawer-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.drawer-head h3{margin:0;color:var(--purple);font-size:14px}.close{border:0;background:#f0e9f2;color:var(--purple);width:32px;height:32px;border-radius:9px;font-weight:900}.notification{padding:12px;border:1px solid var(--line);border-radius:13px;margin-top:9px}.notification.unread{background:#fbf7fc;border-left:3px solid var(--gold)}.notification small{color:var(--purple2);font-size:7px;font-weight:900;text-transform:uppercase}.notification strong{display:block;color:var(--purple);font-size:10px;margin:4px 0}.notification p{margin:0;color:var(--muted);font-size:8px;line-height:1.5}.toast{position:absolute;left:18px;right:18px;bottom:82px;background:#1e0228;color:#fff;padding:11px 13px;border-radius:11px;z-index:60;font-size:8px;display:none;box-shadow:0 14px 34px rgba(0,0,0,.22)}.toast.show{display:block}.toast b{color:var(--gold2)}
+@media(max-width:980px){.stage{grid-template-columns:1fr;gap:30px;padding:28px}.present{margin:auto;text-align:center}.present-grid{max-width:560px;margin:24px auto 0}.demo-note{text-align:left}.phone{height:790px}}
+@media(max-width:560px){body{background:#111}.stage{display:block;padding:0}.present{display:none}.phone-wrap{display:block}.phone{width:100%;height:100dvh;border:0;border-radius:0;box-shadow:none}.phone:before{display:none}.screen{border-radius:0}.statusbar{padding-top:max(7px,env(safe-area-inset-top));height:calc(36px + env(safe-area-inset-top))}.pages{height:calc(100% - 36px - env(safe-area-inset-top) - 72px - 70px - env(safe-area-inset-bottom))}.bottom{height:calc(70px + env(safe-area-inset-bottom));padding-bottom:calc(8px + env(safe-area-inset-bottom))}.drawer{top:calc(36px + env(safe-area-inset-top))}}
+</style>
+</head>
+<body>
+<div class="stage">
+  <section class="present">
+    <span class="eyebrow">Aplicación HSMC KM13 · Prototipo funcional</span>
+    <h1>La Hermandad también en el celular</h1>
+    <p>Esta demostración muestra cómo podría funcionar la futura aplicación Android de HSMC KM13, conectando información institucional, comunicados, agenda, festividad y canales oficiales bajo la misma identidad visual.</p>
+    <div class="present-grid">
+      <div class="present-card"><span>01</span><strong>Información</strong><small>Comunicados y contenidos oficiales en una experiencia sencilla.</small></div>
+      <div class="present-card"><span>02</span><strong>Agenda</strong><small>Fechas y actividades disponibles en pocos toques.</small></div>
+      <div class="present-card"><span>03</span><strong>Festividad</strong><small>Acceso directo a recorridos y plataforma operativa.</small></div>
+      <div class="present-card"><span>04</span><strong>Notificaciones</strong><small>Ejemplo de cómo se mostrarían avisos importantes.</small></div>
+    </div>
+    <div class="demo-note"><b>Modo demostración.</b> Esta página simula la experiencia de la futura app. No instala una aplicación, no envía notificaciones reales y no modifica la plataforma activa.</div>
+  </section>
+
+  <div class="phone-wrap">
+    <div class="phone">
+      <div class="screen">
+        <div class="statusbar"><span>9:41</span><span>● ● ● 100%</span></div>
+        <header class="appbar">
+          <div class="appbrand"><div class="appmark">✝</div><div><strong>HSMC KM13</strong><small>Hermandad del Señor de los Milagros</small></div></div>
+          <button class="bell" id="bell" aria-label="Abrir notificaciones">♢</button>
+        </header>
+
+        <div class="pages">
+          <section class="page active" id="home">
+            <div class="hero">
+              <img src="assets/lienzo-oficial-hsmc.png" alt="Lienzo oficial HSMC KM13">
+              <div class="hero-copy"><span>HSMC KM13 · Comas</span><h2>Fe que camina con Comas</h2><p>Información, actividades y vida institucional en un solo espacio.</p></div>
+            </div>
+            <div class="section">
+              <div class="quick">
+                <button class="qbtn" data-go="comunicados"><b>✦</b><span>Comunicados</span></button>
+                <button class="qbtn" data-go="agenda"><b>▦</b><span>Agenda</span></button>
+                <button class="qbtn" id="festivalQuick"><b>●</b><span>Festividad</span></button>
+                <button class="qbtn" id="facebookQuick"><b>▶</b><span>Facebook</span></button>
+              </div>
+
+              <div class="section-head"><h3>Destacado</h3><button data-go="comunicados">Ver más</button></div>
+              <article class="notice-card">
+                <span>Festividad 2026</span>
+                <h4>Procesión Infantil · 8 de octubre</h4>
+                <p>Consulta la información principal de la actividad y accede al recorrido oficial desde la plataforma de festividad.</p>
+                <a href="https://festividad-hsmc-km13.pages.dev/#recorridos" target="_blank" rel="noopener noreferrer">Ver recorrido ↗</a>
+              </article>
+
+              <div class="section-head"><h3>Próximas actividades</h3><button data-go="agenda">Ver agenda</button></div>
+              <div class="event-list">
+                <article class="event"><div class="date">11<span>OCT</span></div><div><h4>Procesión Invitación</h4><p>Domingo · 12:00 m.</p></div><span class="tag">Festividad</span></article>
+                <article class="event"><div class="date">17<span>OCT</span></div><div><h4>Procesión Extraordinaria</h4><p>Sábado · 7:00 a. m.</p></div><span class="tag">Festividad</span></article>
+              </div>
+            </div>
+            <div class="banner">
+              <span>Canal oficial</span><h3>Facebook HSMC KM13</h3><p>Accede a publicaciones y transmisiones oficiales desde el mismo ecosistema.</p>
+              <a href="https://www.facebook.com/share/19Xv1oug8j/" target="_blank" rel="noopener noreferrer">Abrir Facebook ↗</a>
+            </div>
+          </section>
+
+          <section class="page" id="comunicados">
+            <div class="page-title"><span>Información oficial</span><h2>Comunicados</h2><p>Avisos y novedades organizados para facilitar su consulta desde el celular.</p></div>
+            <div class="section cards">
+              <article class="card"><small>Festividad · Destacado</small><h4>Procesión Infantil · 8 de octubre</h4><p>Información principal de la actividad y acceso al recorrido oficial.</p><div class="card-footer"><span>8 oct. 2026</span><button class="linkbtn demo">Abrir</button></div></article>
+              <article class="card"><small>Canal oficial</small><h4>Facebook oficial HSMC KM13</h4><p>Acceso a publicaciones y transmisiones de la Hermandad.</p><div class="card-footer"><span>Disponible</span><a class="linkbtn" href="https://www.facebook.com/share/19Xv1oug8j/" target="_blank" rel="noopener noreferrer">Abrir ↗</a></div></article>
+              <article class="card"><small>Institucional · Demo</small><h4>Comunicado institucional</h4><p>Ejemplo de cómo se mostraría una publicación validada desde el panel administrativo.</p><div class="card-footer"><span>Demostración</span><button class="linkbtn demo">Abrir</button></div></article>
+            </div>
+          </section>
+
+          <section class="page" id="agenda">
+            <div class="page-title"><span>Calendario HSMC KM13</span><h2>Agenda</h2><p>Fechas y horarios principales de la Festividad 2026.</p></div>
+            <div class="section event-list">
+              <article class="event"><div class="date">08<span>OCT</span></div><div><h4>Procesión Infantil</h4><p>Jueves · 2:00 p. m.</p></div><span class="tag">Destacado</span></article>
+              <article class="event"><div class="date">11<span>OCT</span></div><div><h4>Procesión Invitación</h4><p>Domingo · 12:00 m.</p></div><span class="tag">Festividad</span></article>
+              <article class="event"><div class="date">17<span>OCT</span></div><div><h4>Procesión Extraordinaria · Primer día</h4><p>Sábado · 7:00 a. m.</p></div><span class="tag">Festividad</span></article>
+              <article class="event"><div class="date">18<span>OCT</span></div><div><h4>Procesión Extraordinaria · Segundo día</h4><p>Domingo · 9:00 a. m.</p></div><span class="tag">Festividad</span></article>
+              <article class="event"><div class="date">31<span>OCT</span></div><div><h4>Procesión · Primer día</h4><p>Sábado · 7:00 a. m.</p></div><span class="tag">Festividad</span></article>
+              <article class="event"><div class="date">01<span>NOV</span></div><div><h4>Procesión · Segundo día</h4><p>Domingo · 7:00 a. m.</p></div><span class="tag">Festividad</span></article>
+              <article class="event"><div class="date">07<span>NOV</span></div><div><h4>Procesión · Tercer y último día</h4><p>Sábado · 7:00 a. m.</p></div><span class="tag">Festividad</span></article>
+            </div>
+          </section>
+
+          <section class="page" id="festividad">
+            <div class="page-title"><span>Festividad HSMC KM13 · 2026</span><h2>Festividad</h2><p>Acceso rápido a la plataforma operativa y a los contenidos principales.</p></div>
+            <div class="banner">
+              <span>Plataforma activa</span><h3>Festividad 2026</h3><p>Recorridos, programación, comunicados y demás información pública disponible desde la web oficial de la festividad.</p>
+              <a href="https://festividad-hsmc-km13.pages.dev/" target="_blank" rel="noopener noreferrer">Abrir plataforma ↗</a>
+            </div>
+            <div class="gallery">
+              <div style="background-image:url('assets/lienzo-oficial-hsmc.png')"></div>
+              <div style="background-image:url('assets/recorrido-11-octubre.png')"></div>
+              <div style="background-image:url('assets/recorrido-17-octubre.png')"></div>
+            </div>
+          </section>
+
+          <section class="page" id="mas">
+            <div class="page-title"><span>HSMC KM13</span><h2>Más</h2><p>Accesos institucionales y configuración de la futura aplicación.</p></div>
+            <div class="profile-card"><div class="profile-mark">✝</div><h3>HSMC KM13</h3><p>Hermandad del Señor de los Milagros KM 13 · Comas<br>“Patrón de Lima Norte”</p></div>
+            <div class="menu-list">
+              <a class="menu-item" href="institucional.html" target="_blank" rel="noopener noreferrer">Portal institucional <span>↗</span></a>
+              <a class="menu-item" href="https://festividad-hsmc-km13.pages.dev/" target="_blank" rel="noopener noreferrer">Festividad 2026 <span>↗</span></a>
+              <a class="menu-item" href="https://www.facebook.com/share/19Xv1oug8j/" target="_blank" rel="noopener noreferrer">Facebook oficial <span>↗</span></a>
+              <button class="menu-item demo" style="width:100%">Preferencias de notificación <span>Demo</span></button>
+              <button class="menu-item demo" style="width:100%">Acerca de la aplicación <span>Demo</span></button>
+            </div>
+          </section>
+        </div>
+
+        <nav class="bottom" aria-label="Navegación principal">
+          <button class="tab active" data-go="home"><b>⌂</b>Inicio</button>
+          <button class="tab" data-go="comunicados"><b>✦</b>Comunicados</button>
+          <button class="tab" data-go="agenda"><b>▦</b>Agenda</button>
+          <button class="tab" data-go="festividad"><b>●</b>Festividad</button>
+          <button class="tab" data-go="mas"><b>•••</b>Más</button>
+        </nav>
+
+        <div class="drawer" id="drawer">
+          <div class="drawer-box">
+            <div class="drawer-head"><h3>Notificaciones</h3><button class="close" id="closeDrawer" aria-label="Cerrar">✕</button></div>
+            <article class="notification unread"><small>Agenda · Demo</small><strong>Procesión Infantil</strong><p>Ejemplo de recordatorio: mañana · 2:00 p. m.</p></article>
+            <article class="notification unread"><small>Comunicado · Demo</small><strong>Nueva publicación disponible</strong><p>Así se visualizaría una alerta enviada desde el panel administrativo.</p></article>
+            <article class="notification"><small>Sistema</small><strong>Modo demostración</strong><p>Estas notificaciones son ejemplos visuales; no fueron enviadas a ningún dispositivo.</p></article>
+          </div>
+        </div>
+
+        <div class="toast" id="toast"><b>Demo:</b> esta función se activará en la aplicación Android real.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const pages=[...document.querySelectorAll('.page')];
+const tabs=[...document.querySelectorAll('.tab')];
+const drawer=document.getElementById('drawer');
+const toast=document.getElementById('toast');
+
+function go(id){
+  pages.forEach(p=>p.classList.toggle('active',p.id===id));
+  tabs.forEach(t=>t.classList.toggle('active',t.dataset.go===id));
+  document.querySelector('.pages').scrollTop=0;
+}
+document.querySelectorAll('[data-go]').forEach(el=>el.addEventListener('click',()=>go(el.dataset.go)));
+
+document.getElementById('bell').addEventListener('click',()=>drawer.classList.add('open'));
+document.getElementById('closeDrawer').addEventListener('click',()=>drawer.classList.remove('open'));
+drawer.addEventListener('click',e=>{if(e.target===drawer)drawer.classList.remove('open')});
+
+document.getElementById('festivalQuick').addEventListener('click',()=>go('festividad'));
+document.getElementById('facebookQuick').addEventListener('click',()=>window.open('https://www.facebook.com/share/19Xv1oug8j/','_blank','noopener'));
+
+function showToast(){
+  toast.classList.add('show');
+  clearTimeout(window.__toastTimer);
+  window.__toastTimer=setTimeout(()=>toast.classList.remove('show'),2200);
+}
+document.querySelectorAll('.demo').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();showToast()}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')drawer.classList.remove('open')});
+</script>
+</body>
+</html>
