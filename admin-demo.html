@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#260233">
+<title>HSMC KM13 | Panel Administrativo · Demo</title>
+<meta name="description" content="Demostración del panel administrativo para la propuesta institucional HSMC KM13.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --purple:#260233;--purple2:#4a0b63;--gold:#d4a53b;--gold2:#f0cf72;--ink:#221728;
+  --muted:#756a78;--line:#e9e0ea;--paper:#fff;--bg:#f5f1f6;--ok:#31765a;--warn:#9a6a12;
+  --shadow:0 18px 55px rgba(38,2,51,.10);--sidebar:280px;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Manrope,system-ui,sans-serif;-webkit-font-smoothing:antialiased}button,input,textarea,select{font:inherit}button,a{touch-action:manipulation}.app{min-height:100vh;display:grid;grid-template-columns:var(--sidebar) 1fr}.sidebar{position:sticky;top:0;height:100vh;background:linear-gradient(180deg,#1b0225,#310541 62%,#22022e);color:#fff;padding:24px 18px;border-right:1px solid rgba(240,207,114,.16);z-index:30}.brand{display:flex;gap:12px;align-items:center;padding:4px 8px 24px;border-bottom:1px solid rgba(255,255,255,.09)}.brand-mark{width:48px;height:48px;border:1px solid rgba(240,207,114,.65);border-radius:50%;display:grid;place-items:center;color:var(--gold2);font-family:Cinzel,serif;font-size:22px}.brand strong{font-family:Cinzel,serif;display:block;font-size:16px}.brand span{display:block;margin-top:3px;color:#cdbdd2;font-size:8px;letter-spacing:.13em;text-transform:uppercase}.demo-badge{margin:18px 6px 14px;padding:10px 12px;border:1px solid rgba(240,207,114,.18);border-radius:12px;background:rgba(240,207,114,.06);color:#eadbf0;font-size:10px;line-height:1.55}.demo-badge b{color:var(--gold2)}.nav{display:grid;gap:6px}.nav button{width:100%;border:0;background:transparent;color:#d8c9dd;text-align:left;padding:12px 12px;border-radius:11px;display:flex;align-items:center;gap:11px;font-weight:800;font-size:12px;cursor:pointer}.nav button:hover,.nav button.active{background:rgba(255,255,255,.075);color:#fff}.nav button.active{box-shadow:inset 3px 0 0 var(--gold)}.nav .icon{width:24px;text-align:center;color:var(--gold2)}.sidebar-foot{position:absolute;left:18px;right:18px;bottom:20px;padding:14px;border-top:1px solid rgba(255,255,255,.09);color:#bcaac3;font-size:10px;line-height:1.6}.sidebar-foot strong{color:#fff}.main{min-width:0}.topbar{position:sticky;top:0;z-index:20;min-height:76px;background:rgba(255,255,255,.93);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 28px}.menu{display:none;border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 10px}.top-title small{display:block;color:var(--muted);font-size:9px;letter-spacing:.11em;text-transform:uppercase;font-weight:900}.top-title strong{display:block;color:var(--purple);font-size:16px;margin-top:2px}.top-actions{display:flex;align-items:center;gap:10px}.preview-link,.ghost-btn,.primary-btn{border-radius:11px;padding:10px 13px;font-size:11px;font-weight:900;text-decoration:none;border:1px solid var(--line);cursor:pointer}.preview-link,.ghost-btn{background:#fff;color:var(--purple)}.primary-btn{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#2b1830;border-color:transparent}.avatar{width:40px;height:40px;border-radius:50%;background:var(--purple);color:var(--gold2);display:grid;place-items:center;font-weight:900}.content{padding:30px}.page{display:none}.page.active{display:block}.eyebrow{color:var(--purple2);font-size:9px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.page h1{font-family:Cinzel,serif;color:var(--purple);font-size:clamp(30px,4vw,48px);line-height:1.05;margin:8px 0 10px}.lede{color:var(--muted);max-width:820px;line-height:1.75;font-size:14px}.notice{margin:22px 0;padding:14px 16px;border:1px solid #ead8ab;border-left:4px solid var(--gold);background:#fffaf0;border-radius:12px;color:#695524;font-size:11px;line-height:1.6}.notice strong{color:#4e3d16}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:26px 0}.metric{background:#fff;border:1px solid var(--line);border-radius:17px;padding:20px;box-shadow:0 10px 26px rgba(38,2,51,.035)}.metric span{color:var(--muted);font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}.metric b{display:block;color:var(--purple);font-family:Cinzel,serif;font-size:30px;margin-top:8px}.metric small{display:block;color:#938698;font-size:10px;margin-top:4px}.grid-2{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 10px 28px rgba(38,2,51,.04)}.card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:15px;margin-bottom:18px}.card h2{font-size:16px;color:var(--purple);margin:0}.card-head small{color:var(--muted);font-size:10px}.quick{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.quick button{border:1px solid var(--line);background:var(--bg);border-radius:13px;padding:16px;text-align:left;color:var(--purple);font-weight:900;font-size:11px;cursor:pointer}.quick button span{display:block;color:var(--gold);font-size:18px;margin-bottom:8px}.quick button:hover{background:#fff}.table{width:100%;border-collapse:collapse}.table th,.table td{text-align:left;padding:12px 8px;border-bottom:1px solid var(--line);font-size:11px;vertical-align:top}.table th{color:#8b7d90;text-transform:uppercase;letter-spacing:.08em;font-size:8px}.pill{display:inline-flex;align-items:center;gap:6px;padding:6px 8px;border-radius:999px;font-size:8px;font-weight:900;text-transform:uppercase;letter-spacing:.06em}.pill.ok{background:#edf7f2;color:var(--ok)}.pill.draft{background:#fff6df;color:var(--warn)}.pill.wait{background:#f2eef5;color:var(--purple)}.activity{display:grid;gap:12px}.activity-item{display:grid;grid-template-columns:34px 1fr;gap:10px}.activity-dot{width:34px;height:34px;border-radius:10px;background:#f2eaf4;color:var(--purple);display:grid;place-items:center;font-weight:900}.activity-item strong{display:block;font-size:11px;color:var(--purple)}.activity-item span{display:block;color:var(--muted);font-size:10px;margin-top:3px;line-height:1.5}.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0}.search{flex:1;min-width:220px;border:1px solid var(--line);background:#fff;border-radius:11px;padding:11px 13px}.list-grid{display:grid;gap:12px}.item-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}.item-card small{color:var(--purple2);font-size:8px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}.item-card h3{color:var(--purple);font-size:15px;margin:5px 0}.item-card p{color:var(--muted);font-size:11px;line-height:1.55;margin:0}.item-actions{display:flex;gap:7px}.mini{border:1px solid var(--line);background:#fff;border-radius:9px;padding:8px 9px;color:var(--purple);font-size:9px;font-weight:900;cursor:pointer}.agenda-board{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.agenda-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px}.agenda-date{display:flex;align-items:flex-end;gap:8px}.agenda-date b{font-family:Cinzel,serif;color:var(--purple);font-size:30px;line-height:1}.agenda-date span{color:var(--gold);font-size:9px;font-weight:900;text-transform:uppercase}.agenda-card h3{font-size:13px;color:var(--purple);margin:12px 0 4px}.agenda-card p{margin:0;color:var(--muted);font-size:10px;line-height:1.5}.gallery-admin{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.media-card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden}.media-card img{width:100%;aspect-ratio:16/10;object-fit:cover}.media-body{padding:13px}.media-body strong{display:block;color:var(--purple);font-size:11px}.media-body span{display:block;color:var(--muted);font-size:9px;margin-top:4px}.upload-box{border:2px dashed #d8cadc;background:#fbf8fc;border-radius:18px;padding:38px;text-align:center;color:var(--muted)}.upload-box b{display:block;color:var(--purple);margin:8px 0;font-size:13px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:grid;gap:6px}.field.full{grid-column:1/-1}.field label{color:var(--purple);font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}.field input,.field textarea,.field select{border:1px solid var(--line);background:#fff;border-radius:11px;padding:11px 12px;color:var(--ink)}.field textarea{min-height:120px;resize:vertical}.save-row{display:flex;justify-content:flex-end;gap:10px;margin-top:16px}.role-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.role{background:#fff;border:1px solid var(--line);border-radius:17px;padding:20px}.role h3{color:var(--purple);font-size:14px;margin:0 0 8px}.role p{color:var(--muted);font-size:10px;line-height:1.55}.role ul{margin:14px 0 0;padding-left:18px;color:var(--muted);font-size:10px;line-height:1.8}.modal{position:fixed;inset:0;background:rgba(20,3,27,.62);display:none;place-items:center;padding:18px;z-index:100}.modal.open{display:grid}.modal-box{width:min(620px,100%);max-height:88vh;overflow:auto;background:#fff;border-radius:20px;box-shadow:0 30px 90px rgba(0,0,0,.28);padding:24px}.modal-head{display:flex;justify-content:space-between;gap:15px;align-items:center;margin-bottom:18px}.modal-head h2{margin:0;color:var(--purple);font-size:18px}.close{border:0;background:#f0ebf2;border-radius:9px;width:34px;height:34px;color:var(--purple);font-weight:900;cursor:pointer}.toast{position:fixed;right:20px;bottom:20px;z-index:120;background:var(--purple);color:#fff;padding:13px 16px;border-radius:12px;box-shadow:var(--shadow);font-size:11px;display:none}.toast.show{display:block}.toast b{color:var(--gold2)}
+@media(max-width:1100px){.metrics{grid-template-columns:1fr 1fr}.grid-2{grid-template-columns:1fr}.agenda-board,.gallery-admin,.role-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:820px){.app{display:block}.sidebar{position:fixed;left:-300px;width:280px;transition:.22s}.sidebar.open{left:0}.menu{display:inline-block}.topbar{padding:10px 16px}.content{padding:22px 16px}.top-title strong{font-size:14px}.preview-link{display:none}}
+@media(max-width:600px){.metrics{grid-template-columns:1fr 1fr}.metric{padding:16px}.metric b{font-size:24px}.agenda-board,.gallery-admin,.role-grid,.quick,.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.item-card{grid-template-columns:1fr}.item-actions{justify-content:flex-start}.content{padding-bottom:80px}.top-actions .ghost-btn{display:none}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar" id="sidebar">
+  <div class="brand"><div class="brand-mark">✝</div><div><strong>HSMC KM13</strong><span>Administración institucional</span></div></div>
+  <div class="demo-badge"><b>MODO DEMOSTRACIÓN</b><br>Esta interfaz no publica ni modifica información real.</div>
+  <nav class="nav" aria-label="Panel administrativo">
+    <button class="active" data-page="dashboard"><span class="icon">⌂</span>Resumen</button>
+    <button data-page="comunicados"><span class="icon">✦</span>Comunicados</button>
+    <button data-page="agenda"><span class="icon">▦</span>Agenda</button>
+    <button data-page="galeria"><span class="icon">▧</span>Galería</button>
+    <button data-page="institucional"><span class="icon">◈</span>Contenido institucional</button>
+    <button data-page="usuarios"><span class="icon">◎</span>Usuarios y roles</button>
+    <button data-page="actividad"><span class="icon">≡</span>Registro de actividad</button>
+  </nav>
+  <div class="sidebar-foot">Propuesta tecnológica<br><strong>Satelital Security</strong></div>
+</aside>
+
+<div class="main">
+<header class="topbar">
+  <div style="display:flex;align-items:center;gap:12px">
+    <button class="menu" id="menu" aria-label="Abrir menú">☰</button>
+    <div class="top-title"><small>Panel administrativo · Demo</small><strong id="pageTitle">Resumen general</strong></div>
+  </div>
+  <div class="top-actions">
+    <a class="preview-link" href="institucional.html" target="_blank" rel="noopener noreferrer">Ver portal ↗</a>
+    <button class="ghost-btn" id="helpBtn">Ayuda</button>
+    <div class="avatar" title="Administrador de demostración">AD</div>
+  </div>
+</header>
+
+<main class="content">
+<section class="page active" id="dashboard">
+  <span class="eyebrow">Administración HSMC KM13</span>
+  <h1>Resumen general</h1>
+  <p class="lede">Una vista central para revisar el estado del portal, preparar contenidos y administrar las principales áreas sin necesidad de modificar código.</p>
+  <div class="notice"><strong>Demostración:</strong> los botones y formularios de esta página simulan el flujo de trabajo. Ninguna acción afecta la web pública.</div>
+
+  <div class="metrics">
+    <div class="metric"><span>Comunicados</span><b>03</b><small>2 publicados · 1 borrador</small></div>
+    <div class="metric"><span>Actividades</span><b>07</b><small>Agenda Festividad 2026</small></div>
+    <div class="metric"><span>Galería</span><b>03</b><small>Recursos de demostración</small></div>
+    <div class="metric"><span>Pendientes</span><b>02</b><small>Historia y autoridades</small></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-head"><div><h2>Acciones rápidas</h2><small>Operaciones frecuentes</small></div></div>
+      <div class="quick">
+        <button data-open="comunicado"><span>＋</span>Nuevo comunicado</button>
+        <button data-open="evento"><span>＋</span>Nueva actividad</button>
+        <button data-page-jump="galeria"><span>▧</span>Agregar fotografía</button>
+        <button data-page-jump="institucional"><span>◈</span>Revisar contenido institucional</button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head"><div><h2>Estado institucional</h2><small>Contenido pendiente de validación</small></div></div>
+      <div class="activity">
+        <div class="activity-item"><div class="activity-dot">01</div><div><strong>Reseña histórica</strong><span>Pendiente de texto oficial aprobado por la Hermandad.</span></div></div>
+        <div class="activity-item"><div class="activity-dot">02</div><div><strong>Autoridades</strong><span>Pendiente de relación oficial de cargos y nombres.</span></div></div>
+        <div class="activity-item"><div class="activity-dot">✓</div><div><strong>Facebook oficial</strong><span>Canal ya enlazado en el ecosistema de demostración.</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:18px">
+    <div class="card-head"><div><h2>Publicaciones recientes</h2><small>Vista de administración</small></div><button class="mini" data-page-jump="comunicados">Ver todas</button></div>
+    <table class="table">
+      <thead><tr><th>Contenido</th><th>Tipo</th><th>Estado</th><th>Última edición</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Procesión Infantil · 8 de octubre</strong></td><td>Actividad</td><td><span class="pill ok">Publicado</span></td><td>Demo</td></tr>
+        <tr><td><strong>Acceso al Facebook oficial</strong></td><td>Canal</td><td><span class="pill ok">Publicado</span></td><td>Demo</td></tr>
+        <tr><td><strong>Comunicado institucional</strong></td><td>Comunicado</td><td><span class="pill draft">Borrador</span></td><td>Demo</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="page" id="comunicados">
+  <span class="eyebrow">Gestión de contenidos</span><h1>Comunicados</h1>
+  <p class="lede">Creación, edición y publicación de avisos oficiales con control de estado antes de hacerlos visibles al público.</p>
+  <div class="toolbar"><input class="search" placeholder="Buscar comunicados…"><button class="primary-btn" data-open="comunicado">＋ Nuevo comunicado</button></div>
+  <div class="list-grid" id="comunicadoList">
+    <article class="item-card"><div><small>Publicado · Festividad</small><h3>Procesión Infantil · 8 de octubre</h3><p>Actividad destacada con horario y acceso al recorrido oficial.</p></div><div class="item-actions"><button class="mini demo-action">Editar</button><button class="mini demo-action">Vista previa</button></div></article>
+    <article class="item-card"><div><small>Publicado · Canal oficial</small><h3>Facebook oficial HSMC KM13</h3><p>Acceso directo a publicaciones y transmisiones.</p></div><div class="item-actions"><button class="mini demo-action">Editar</button><button class="mini demo-action">Vista previa</button></div></article>
+    <article class="item-card"><div><small>Borrador · Institucional</small><h3>Comunicado institucional</h3><p>Contenido de ejemplo aún no publicado.</p></div><div class="item-actions"><button class="mini demo-action">Editar</button><button class="mini demo-action">Revisar</button></div></article>
+  </div>
+</section>
+
+<section class="page" id="agenda">
+  <span class="eyebrow">Calendario institucional</span><h1>Agenda</h1>
+  <p class="lede">Gestión de fechas, horarios y actividades que luego podrán mostrarse en el portal y en la aplicación móvil.</p>
+  <div class="toolbar"><button class="primary-btn" data-open="evento">＋ Nueva actividad</button><button class="ghost-btn demo-action">Ordenar fechas</button></div>
+  <div class="agenda-board">
+    <article class="agenda-card"><div class="agenda-date"><b>08</b><span>OCT · 2026</span></div><h3>Procesión Infantil</h3><p>Jueves · 2:00 p. m.</p></article>
+    <article class="agenda-card"><div class="agenda-date"><b>11</b><span>OCT · 2026</span></div><h3>Procesión Invitación</h3><p>Domingo · 12:00 m.</p></article>
+    <article class="agenda-card"><div class="agenda-date"><b>17</b><span>OCT · 2026</span></div><h3>Procesión Extraordinaria</h3><p>Sábado · 7:00 a. m.</p></article>
+    <article class="agenda-card"><div class="agenda-date"><b>18</b><span>OCT · 2026</span></div><h3>Procesión Extraordinaria</h3><p>Domingo · 9:00 a. m.</p></article>
+    <article class="agenda-card"><div class="agenda-date"><b>31</b><span>OCT · 2026</span></div><h3>Procesión · Primer día</h3><p>Sábado · 7:00 a. m.</p></article>
+    <article class="agenda-card"><div class="agenda-date"><b>01</b><span>NOV · 2026</span></div><h3>Procesión · Segundo día</h3><p>Domingo · 7:00 a. m.</p></article>
+  </div>
+</section>
+
+<section class="page" id="galeria">
+  <span class="eyebrow">Archivo visual</span><h1>Galería</h1>
+  <p class="lede">Carga y organización de fotografías y videos autorizados antes de su publicación en el portal institucional.</p>
+  <div class="upload-box"><div style="font-size:30px;color:var(--gold)">＋</div><b>Agregar material autorizado</b><span>En la versión real aquí se cargarán imágenes o videos y se asignarán título, fecha y categoría.</span><div style="margin-top:14px"><button class="primary-btn demo-action">Seleccionar archivo</button></div></div>
+  <div class="gallery-admin" style="margin-top:18px">
+    <article class="media-card"><img src="assets/lienzo-oficial-hsmc.png" alt="Lienzo oficial HSMC KM13"><div class="media-body"><strong>Lienzo oficial HSMC KM13</strong><span>Identidad institucional</span></div></article>
+    <article class="media-card"><img src="assets/recorrido-11-octubre.png" alt="Recorrido 11 de octubre"><div class="media-body"><strong>Recorrido · 11 de octubre</strong><span>Festividad 2026</span></div></article>
+    <article class="media-card"><img src="assets/recorrido-17-octubre.png" alt="Recorrido 17 de octubre"><div class="media-body"><strong>Recorrido · 17 de octubre</strong><span>Festividad 2026</span></div></article>
+  </div>
+</section>
+
+<section class="page" id="institucional">
+  <span class="eyebrow">Información oficial</span><h1>Contenido institucional</h1>
+  <p class="lede">Área destinada a mantener actualizados los datos oficiales de la Hermandad con un flujo de validación antes de publicar.</p>
+  <div class="notice"><strong>Control de publicación:</strong> los campos mostrados son ejemplos. La versión real debe requerir aprobación antes de hacer visibles cambios institucionales.</div>
+  <div class="card">
+    <form id="institutionalForm" class="form-grid">
+      <div class="field full"><label>Reseña histórica</label><textarea placeholder="Pendiente de texto oficial validado por la Hermandad…"></textarea></div>
+      <div class="field"><label>Hermano Mayor / autoridad principal</label><input placeholder="Pendiente de validación"></div>
+      <div class="field"><label>Periodo</label><input placeholder="Pendiente de validación"></div>
+      <div class="field"><label>Dirección / sede</label><input placeholder="Pendiente de validación"></div>
+      <div class="field"><label>Teléfono institucional</label><input placeholder="Pendiente de validación"></div>
+      <div class="field"><label>Correo institucional</label><input placeholder="Pendiente de validación"></div>
+      <div class="field"><label>Facebook oficial</label><input value="Canal enlazado en la propuesta" readonly></div>
+    </form>
+    <div class="save-row"><button class="ghost-btn demo-action">Guardar borrador</button><button class="primary-btn demo-action">Enviar a revisión</button></div>
+  </div>
+</section>
+
+<section class="page" id="usuarios">
+  <span class="eyebrow">Seguridad y permisos</span><h1>Usuarios y roles</h1>
+  <p class="lede">Propuesta de permisos para que cada responsable vea únicamente las funciones que necesita.</p>
+  <div class="role-grid">
+    <article class="role"><h3>Administrador</h3><p>Control general de la plataforma.</p><ul><li>Gestionar usuarios</li><li>Publicar y editar</li><li>Configurar módulos</li><li>Revisar actividad</li></ul></article>
+    <article class="role"><h3>Editor</h3><p>Gestión cotidiana del contenido.</p><ul><li>Crear comunicados</li><li>Editar agenda</li><li>Gestionar galería</li><li>Enviar a revisión</li></ul></article>
+    <article class="role"><h3>Revisor</h3><p>Validación previa a publicación.</p><ul><li>Revisar contenido</li><li>Aprobar publicaciones</li><li>Rechazar con observación</li><li>Sin acceso técnico</li></ul></article>
+  </div>
+</section>
+
+<section class="page" id="actividad">
+  <span class="eyebrow">Control y trazabilidad</span><h1>Registro de actividad</h1>
+  <p class="lede">Historial de cambios para saber qué contenido fue creado, editado o aprobado y por qué usuario.</p>
+  <div class="card">
+    <table class="table">
+      <thead><tr><th>Acción</th><th>Área</th><th>Usuario</th><th>Estado</th></tr></thead>
+      <tbody>
+        <tr><td>Actualización de recorrido</td><td>Agenda</td><td>Administrador demo</td><td><span class="pill ok">Registrado</span></td></tr>
+        <tr><td>Creación de comunicado</td><td>Actualidad</td><td>Editor demo</td><td><span class="pill draft">Borrador</span></td></tr>
+        <tr><td>Solicitud de validación</td><td>Institucional</td><td>Editor demo</td><td><span class="pill wait">Pendiente</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+</main>
+</div>
+</div>
+
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <div class="modal-head"><h2 id="modalTitle">Nuevo contenido</h2><button class="close" id="closeModal" aria-label="Cerrar">✕</button></div>
+    <form id="demoForm" class="form-grid">
+      <div class="field"><label>Título</label><input id="demoTitle" required placeholder="Título del contenido"></div>
+      <div class="field"><label>Tipo</label><select id="demoType"><option>Comunicado</option><option>Actividad</option></select></div>
+      <div class="field"><label>Fecha</label><input type="date"></div>
+      <div class="field"><label>Estado</label><select><option>Borrador</option><option>Enviar a revisión</option></select></div>
+      <div class="field full"><label>Contenido</label><textarea placeholder="Escriba aquí el contenido de demostración…"></textarea></div>
+    </form>
+    <div class="save-row"><button class="ghost-btn" id="cancelModal">Cancelar</button><button class="primary-btn" id="saveDemo">Guardar demostración</button></div>
+  </div>
+</div>
+<div class="toast" id="toast"><b>Demo:</b> acción simulada. No se modificó información real.</div>
+
+<script>
+const sidebar=document.getElementById('sidebar');
+const menu=document.getElementById('menu');
+const pages=[...document.querySelectorAll('.page')];
+const navButtons=[...document.querySelectorAll('.nav button[data-page]')];
+const pageTitle=document.getElementById('pageTitle');
+const titles={dashboard:'Resumen general',comunicados:'Comunicados',agenda:'Agenda',galeria:'Galería',institucional:'Contenido institucional',usuarios:'Usuarios y roles',actividad:'Registro de actividad'};
+function go(page){
+  pages.forEach(p=>p.classList.toggle('active',p.id===page));
+  navButtons.forEach(b=>b.classList.toggle('active',b.dataset.page===page));
+  pageTitle.textContent=titles[page]||'Panel administrativo';
+  sidebar.classList.remove('open');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+navButtons.forEach(b=>b.addEventListener('click',()=>go(b.dataset.page)));
+document.querySelectorAll('[data-page-jump]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.pageJump)));
+menu.addEventListener('click',()=>sidebar.classList.toggle('open'));
+
+const modal=document.getElementById('modal'),modalTitle=document.getElementById('modalTitle'),demoType=document.getElementById('demoType'),demoTitle=document.getElementById('demoTitle');
+function openModal(type){
+  modal.classList.add('open');
+  if(type==='evento'){modalTitle.textContent='Nueva actividad · Demo';demoType.value='Actividad'}
+  else{modalTitle.textContent='Nuevo comunicado · Demo';demoType.value='Comunicado'}
+  setTimeout(()=>demoTitle.focus(),50);
+}
+function closeModal(){modal.classList.remove('open')}
+document.querySelectorAll('[data-open]').forEach(b=>b.addEventListener('click',()=>openModal(b.dataset.open)));
+document.getElementById('closeModal').addEventListener('click',closeModal);
+document.getElementById('cancelModal').addEventListener('click',e=>{e.preventDefault();closeModal()});
+modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
+
+const toast=document.getElementById('toast');
+function showToast(){toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2300)}
+document.querySelectorAll('.demo-action').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();showToast()}));
+document.getElementById('saveDemo').addEventListener('click',e=>{e.preventDefault();closeModal();showToast()});
+document.getElementById('helpBtn').addEventListener('click',()=>alert('Este panel es una demostración visual. Ninguna acción publica ni modifica información real.'));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();sidebar.classList.remove('open')}});
+</script>
+</body>
+</html>
